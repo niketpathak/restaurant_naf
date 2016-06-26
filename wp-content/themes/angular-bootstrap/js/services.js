@@ -30,16 +30,16 @@ function ThemeService($http) {
 		}
 
 		//Get the category terms from wp-json
-		return $http.get('wp-json/taxonomies/category/terms').success(function(res){
+		return $http.get('restaurant/wp-json/wp/v2/taxonomies/category/terms').success(function(res){
 			ThemeService.categories = res;
 			console.log(ThemeService.categories);
 		});
 	};
 
 	ThemeService.getPosts = function(page) {
-		return $http.get('wp-json/posts/?page=' + page + '&filter[posts_per_page]=1').success(function(res, status, headers){
+		return $http.get('restaurant/wp-json/wp/v2/posts/?page=' + page + '&filter[posts_per_page]=1').success(function(res, status, headers){
 			ThemeService.posts = res;
-			console.log(ThemeService.posts);
+			console.log("posts",ThemeService.posts);
 			page = parseInt(page);
 
 			// Check page variable for sanity

@@ -23,14 +23,17 @@ app.controller('Main', ['$scope', 'ThemeService', function($scope, ThemeService)
 	ThemeService.getPosts(1);
 
 	$scope.data = ThemeService;
+	console.log("Inside Main-controller");
 
 }]);
 
 app.controller('Content',
 		['$scope', '$http', '$routeParams', function($scope, $http, $routeParams) {
-			$http.get('wp-json/posts/?filter[name]=' + $routeParams.slug).success(function(res){
-				$scope.post = res[0];
+			$http.get('restaurant/wp-json/wp/v2/posts/?filter[name]=' + $routeParams.slug).success(function(res){
+				$scope.singlepost = res[0];
+				console.log("res",res[0]);
 			});
+			console.log("Inside content-controller:slug->",$routeParams.slug);
 		}
 	]
 );
