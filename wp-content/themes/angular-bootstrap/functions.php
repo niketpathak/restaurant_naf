@@ -126,7 +126,7 @@ function _tk_scripts() {
 
 	wp_localize_script('scripts', 'localized',
 			array(
-				'partials' => 'http://full-url-here.com/wp-content/themes/angular-bootstrap/partials/'
+				'partials' => get_stylesheet_directory_uri() . '/partials/'
 				)
 	);
 
