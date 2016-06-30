@@ -747,15 +747,17 @@ class WP_Rewrite {
 	 * @return string|false False if not found. Permalink structure string.
 	 */
 	public function get_page_permastruct() {
-		if ( isset($this->page_structure) )
-			return $this->page_structure;
-
-		if (empty($this->permalink_structure)) {
-			$this->page_structure = '';
-			return false;
-		}
-
-		$this->page_structure = $this->root . '%pagename%';
+//		@custom_npk
+//		if ( isset($this->page_structure) )
+//			return $this->page_structure;
+//
+//		if (empty($this->permalink_structure)) {
+//			$this->page_structure = '';
+//			return false;
+//		}
+//
+//		$this->page_structure = $this->root . '%pagename%';
+		$this->page_structure = $this->root . '/info/%pagename%';
 
 		return $this->page_structure;
 	}
