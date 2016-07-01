@@ -12,7 +12,7 @@ function ThemeService($http) {
 
 	//Set the page title in the <title> tag
 	function _setTitle(documentTitle, pageTitle) {
-		document.querySelector('title').innerHTML = documentTitle + ' | AngularJS Demo Theme';
+		document.querySelector('title').innerHTML = documentTitle + ' | Escale Indienne';
 		ThemeService.pageTitle = pageTitle;
 	}
 

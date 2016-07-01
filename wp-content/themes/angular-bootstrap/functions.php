@@ -123,6 +123,7 @@ function _tk_scripts() {
 	wp_enqueue_script('angularjs-sanitize', get_stylesheet_directory_uri() . '/node_modules/angular-sanitize/angular-sanitize.min.js');
 	wp_enqueue_script('scripts', get_stylesheet_directory_uri() . '/js/scripts.js', array( 'angularjs', 'angularjs-route' ));
 	wp_enqueue_script('theme-service', get_stylesheet_directory_uri() . '/js/services.js');
+	wp_enqueue_script('vanilla_jq', get_stylesheet_directory_uri() . '/js/vanilla_jq.js');
 
 	wp_localize_script('scripts', 'localized',
 			array(
