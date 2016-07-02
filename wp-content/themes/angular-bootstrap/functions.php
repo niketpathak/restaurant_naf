@@ -163,3 +163,29 @@ require get_template_directory() . '/includes/jetpack.php';
  * Load custom WordPress nav walker.
  */
 require get_template_directory() . '/includes/bootstrap-wp-navwalker.php';
+
+/************************************************** CUST_NPK *********************************************/
+
+/**
+ * Get the value of the "count" field
+ *
+ * @param array $object Details of current post.
+ * @param string $field_name Name of field.
+ * @param WP_REST_Request $request Current request
+ *
+ * @return mixed
+ */
+function slug_get_price( $object, $field_name, $request ) {
+	return get_post_meta( $object[ 'id' ], $field_name, true );
+}
+function slug_register_price() {
+	register_rest_field( 'post',
+		'Price',
+		array(
+			'get_callback'    => 'slug_get_price',
+			'update_callback' => null,
+			'schema'          => null,
+		)
+	);
+}
+add_action( 'rest_api_init', 'slug_register_price' );
