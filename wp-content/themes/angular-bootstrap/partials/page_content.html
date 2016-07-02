@@ -1,16 +1,6 @@
 
-<h1>{{singlepost.title.rendered}}</h1>
+<h1>{{singlepage.title.rendered}}</h1>
 
-<p>{{singlepost.content.rendered}}</p>
-<!--Note: At the moment we don't need to care about comments, etc-->
-<!--<ul>-->
-	<!--<li ng-repeat="post in singlepost">-->
-		<!--<a href="/{{post.slug}}" ng-bind-html="post.title"></a>-->
-		<!--<a href="/{{post.slug}}" ng-if="post.featured_image_thumbnail_url"><img ng-src="{{post.featured_image_thumbnail_url}}" alt="{{post.featured_image.title.rendered}}" /></a>-->
-		<!--<div ng-bind-html="post.excerpt.rendered"></div>-->
-	<!--</li>-->
+<div class="rendered-content-container" ng-bind-html="pageContent">
 
-<!--</ul>-->
-<p ng-if="is404">{{errorMessage}}</p>
-
-<br />
+</div>

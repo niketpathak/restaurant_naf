@@ -43,21 +43,19 @@ app.controller('Content',
 );
 //Page Controller
 app.controller('Page',
-	['$scope', '$http', '$routeParams', function($scope, $http, $routeParams) {
+	['$scope', '$http', '$routeParams', '$sce', function($scope, $http, $routeParams, $sce) {
 		$http.get('restaurant/wp-json/wp/v2/pages/' ).success(function(res){
 			var all_pages = res;
 			angular.forEach(all_pages, function(value, key) {
-				//console.log(key + ': ' + value.slug);
 				if(value.slug == $routeParams.slug) {
 					$http.get('restaurant/wp-json/wp/v2/pages/' + value.id).success(function(res){
 						$scope.singlepage = res;
-						console.log("singlePage",res);
+						$scope.pageContent = $sce.trustAsHtml(res.content.rendered);
+						//console.log("singlePage",res);
 					});
 				}
 			});
-			//console.log("pages",all_pages);
 		});
-		console.log("Inside pages-controller:slug->",$routeParams.slug);
 	}
 	]
 );
