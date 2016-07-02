@@ -4,22 +4,25 @@ app.config(function($routeProvider, $locationProvider) {
 	$routeProvider
 	.when('/', {
 		templateUrl: localized.partials + 'main.html',
-		controller: 'Main'
+		controller: 'MainController'
 	})
-	.when('/info/:slug', {
+	.when('/info/:slug/:page_id', {
 			templateUrl: localized.partials + 'page_content.html',
-			controller: 'Page'
+			controller: 'pageController'
 		})
 	.when('/:slug', {
-		templateUrl: localized.partials + 'content.html',
-		controller: 'Content'
+		templateUrl: localized.partials + 'post_content.html',
+		controller: 'postController'
 	})
 	.otherwise({
 		redirectTo: '/'
 	});
 });
+
+
+
 //Main controller
-app.controller('Main', ['$scope', 'ThemeService', function($scope, ThemeService) {
+app.controller('MainController', ['$scope', 'ThemeService', function($scope, ThemeService) {
 	//Get Categories from ThemeService
 	ThemeService.getAllCategories();
 	
@@ -30,32 +33,27 @@ app.controller('Main', ['$scope', 'ThemeService', function($scope, ThemeService)
 	console.log("Inside Main-controller");
 
 }]);
+
 //Content Controller
-app.controller('Content',
-		['$scope', '$http', '$routeParams', function($scope, $http, $routeParams) {
+app.controller('postController',
+		['$scope', '$http', '$routeParams', '$sce', function($scope, $http, $routeParams, $sce) {
 			$http.get('restaurant/wp-json/wp/v2/posts/?filter[name]=' + $routeParams.slug).success(function(res){
 				$scope.singlepost = res[0];
-				console.log("singlePost",res[0]);
+				$scope.postContent = $sce.trustAsHtml(res[0].content.rendered);
+				//console.log("singlePost",res[0]);
 			});
-			console.log("Inside content-controller:slug->",$routeParams.slug);
 		}
 	]
 );
+
 //Page Controller
-app.controller('Page',
+app.controller('pageController',
 	['$scope', '$http', '$routeParams', '$sce', function($scope, $http, $routeParams, $sce) {
-		$http.get('restaurant/wp-json/wp/v2/pages/' ).success(function(res){
-			var all_pages = res;
-			angular.forEach(all_pages, function(value, key) {
-				if(value.slug == $routeParams.slug) {
-					$http.get('restaurant/wp-json/wp/v2/pages/' + value.id).success(function(res){
-						$scope.singlepage = res;
-						$scope.pageContent = $sce.trustAsHtml(res.content.rendered);
-						//console.log("singlePage",res);
-					});
-				}
+		$http.get('restaurant/wp-json/wp/v2/pages/' + $routeParams.page_id).success(function(res){
+			$scope.singlepage = res;
+			$scope.pageContent = $sce.trustAsHtml(res.content.rendered);
+			//console.log("singlePage",res);
 			});
-		});
-	}
+		}
 	]
 );

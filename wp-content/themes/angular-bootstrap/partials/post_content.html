@@ -1,7 +1,10 @@
 
 <h1>{{singlepost.title.rendered}}</h1>
 
-<p>{{singlepost.content.rendered}}</p>
+<div class="rendered-content-container" ng-bind-html="postContent">
+
+</div>
+
 <!--Note: At the moment we don't need to care about comments, etc-->
 <!--<ul>-->
 	<!--<li ng-repeat="post in singlepost">-->
