@@ -30,9 +30,9 @@ function ThemeService($http) {
 		}
 
 		//Get the category terms from wp-json
-		return $http.get('restaurant/wp-json/wp/v2/taxonomies/category/terms').success(function(res){
+		return $http.get('restaurant/wp-json/wp/v2/categories/').success(function(res){
 			ThemeService.categories = res;
-			console.log(ThemeService.categories);
+			//console.log(ThemeService.categories);
 		});
 	};
 
@@ -64,3 +64,44 @@ function ThemeService($http) {
 
 //Finally register the service
 app.factory('ThemeService', ['$http', ThemeService]);
+
+//********************************************** CUSTOM_NPK *********************************************//
+
+
+function CachePagesService($http) {
+
+	var Cache = {
+		all_pages: [],
+		cached: false
+	};
+
+	Cache.getAllPages = function() {
+		//If already cached, don't fetch again
+		if (Cache.all_pages.length) {
+			return;
+		}
+		//fetch pages from API, return promise
+		return $http.get('restaurant/wp-json/wp/v2/pages/').success(function(res){
+			Cache.all_pages = res;
+			Cache.cached = true;
+			//console.log("in_Cache_Service",res);
+		});
+	};
+
+	Cache.getPage = function(page_id) {
+		for (var i = 0, len = Cache.all_pages.length; i < len; i++) {
+			//console.log("RunCount:"+i);
+			if (Cache.all_pages[i].id == page_id) {
+				return Cache.all_pages[i];
+			}
+		}
+	}
+
+	Cache.clear = function(){
+		Cache.cached = false;
+	}
+
+	return Cache;
+}
+//Register this Service
+app.factory('CachePagesService', ['$http', CachePagesService]);

@@ -48,12 +48,18 @@ app.controller('postController',
 
 //Page Controller
 app.controller('pageController',
-	['$scope', '$http', '$routeParams', '$sce', function($scope, $http, $routeParams, $sce) {
-		$http.get('restaurant/wp-json/wp/v2/pages/' + $routeParams.page_id).success(function(res){
-			$scope.singlepage = res;
-			$scope.pageContent = $sce.trustAsHtml(res.content.rendered);
-			//console.log("singlePage",res);
-			});
+	['$scope', '$http', '$routeParams', '$sce', 'CachePagesService', function($scope, $http, $routeParams, $sce, CachePagesService) {
+			if(CachePagesService.cached === false) {
+					//FirstRun: receives a Promise
+					CachePagesService.getAllPages().then(function(){
+					$scope.singlepage = CachePagesService.getPage($routeParams.page_id);
+					$scope.pageContent = $sce.trustAsHtml($scope.singlepage.content.rendered);
+				});
+			} else {
+				$scope.singlepage = CachePagesService.getPage($routeParams.page_id);
+				$scope.pageContent = $sce.trustAsHtml($scope.singlepage.content.rendered);
+			}
+
 		}
 	]
 );
