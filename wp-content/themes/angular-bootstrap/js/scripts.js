@@ -16,6 +16,10 @@ app.config(function($routeProvider, $locationProvider) {
 		templateUrl: localized.partials + 'post_content.html',
 		controller: 'postController'
 	})
+	.when('/category/:slug/:cat_id', {
+		templateUrl: localized.partials + 'category_content.html',
+		controller: 'categoryController'
+	})
 	.otherwise({
 		redirectTo: '/'
 	});
@@ -32,6 +36,7 @@ app.controller('MainController', ['$scope', 'ThemeService', function($scope, The
 	ThemeService.getPosts(1);
 
 	$scope.data = ThemeService;
+	$scope.doc_root = doc_root;
 	console.log("Inside Main-controller");
 
 }]);
@@ -44,6 +49,7 @@ app.controller('postController',
 				$scope.postContent = $sce.trustAsHtml(res[0].content.rendered);
 				//console.log("singlePost",res[0]);
 			});
+			$scope.doc_root = doc_root;
 		}
 	]
 );
@@ -61,7 +67,25 @@ app.controller('pageController',
 				$scope.singlepage = CachePagesService.getPage($routeParams.page_id);
 				$scope.pageContent = $sce.trustAsHtml($scope.singlepage.content.rendered);
 			}
-
+			$scope.doc_root = doc_root;
 		}
+	]
+);
+
+//Category Controller
+app.controller('categoryController',
+	['$scope', '$http', '$routeParams', '$sce', 'CacheCategoryService', function($scope, $http, $routeParams, $sce, CacheCategoryService) {
+		if(CacheCategoryService.cached === false) {
+			//FirstRun: receives a Promise
+			CacheCategoryService.getAllCategories().then(function(){
+				$scope.singlecategory = CacheCategoryService.getCategory($routeParams.cat_id);
+				$scope.categoryContent = $sce.trustAsHtml($scope.singlecategory.description);
+			});
+		} else {
+			$scope.singlecategory = CacheCategoryService.getCategory($routeParams.cat_id);
+			$scope.categoryContent = $sce.trustAsHtml($scope.singlecategory.description);
+		}
+		$scope.doc_root = doc_root;
+	}
 	]
 );

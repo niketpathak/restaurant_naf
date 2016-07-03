@@ -83,7 +83,7 @@ function CachePagesService($http) {
 		return $http.get(doc_root+'/wp-json/wp/v2/pages/').success(function(res){
 			Cache.all_pages = res;
 			Cache.cached = true;
-			//console.log("in_Cache_Service",res);
+			//console.log("in_pageCache_Service",res);
 		});
 	};
 
@@ -92,6 +92,44 @@ function CachePagesService($http) {
 			//console.log("RunCount:"+i);
 			if (Cache.all_pages[i].id == page_id) {
 				return Cache.all_pages[i];
+			}
+		}
+	}
+
+	Cache.clear = function(){
+		Cache.cached = false;
+	}
+
+	return Cache;
+}
+
+//Register the Service
+app.factory('CacheCategoryService', ['$http', CacheCategoryService]);
+function CacheCategoryService($http) {
+
+	var Cache = {
+		all_categories: [],
+		cached: false
+	};
+
+	Cache.getAllCategories = function() {
+		//If already cached, don't fetch again
+		if (Cache.all_categories.length) {
+			return;
+		}
+		//fetch pages from API, return promise
+		return $http.get(doc_root+'/wp-json/wp/v2/categories/').success(function(res){
+			Cache.all_categories = res;
+			Cache.cached = true;
+			console.log("in_CategoryCache_Service",res);
+		});
+	};
+
+	Cache.getCategory = function(cat_id) {
+		for (var i = 0, len = Cache.all_categories.length; i < len; i++) {
+			//console.log("RunCount:"+i);
+			if (Cache.all_categories[i].id == cat_id) {
+				return Cache.all_categories[i];
 			}
 		}
 	}
