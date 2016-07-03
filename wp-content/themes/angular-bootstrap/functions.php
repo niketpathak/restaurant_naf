@@ -122,19 +122,26 @@ function _tk_scripts() {
 		wp_enqueue_script( '_tk-keyboard-image-navigation', get_template_directory_uri() . '/includes/js/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
 	}
 
-	//Load angular
+	//Load Angular Libraries (v1.4.7)
 	wp_enqueue_script('angularjs', get_template_directory_uri() .'/node_modules/angular/angular.min.js');
 	wp_enqueue_script('angularjs-route', get_template_directory_uri() .'/node_modules/angular-route/angular-route.min.js');
 	wp_enqueue_script('angularjs-sanitize', get_stylesheet_directory_uri() . '/node_modules/angular-sanitize/angular-sanitize.min.js');
-	wp_enqueue_script('scripts', get_stylesheet_directory_uri() . '/js/scripts.js', array( 'angularjs', 'angularjs-route' ));
-	wp_enqueue_script('theme-service', get_stylesheet_directory_uri() . '/js/services.js');
+	//Load App
+	wp_enqueue_script('app_restaurant', get_stylesheet_directory_uri() . '/js/app.js', array( 'angularjs', 'angularjs-route' ));
+	wp_enqueue_script('ThemeService', get_stylesheet_directory_uri() . '/js/services/ThemeService.js');
+	wp_enqueue_script('CachePagesService', get_stylesheet_directory_uri() . '/js/services/CachePagesService.js');
+	wp_enqueue_script('CacheCategoryService', get_stylesheet_directory_uri() . '/js/services/CacheCategoryService.js');
+	wp_enqueue_script('MainController', get_stylesheet_directory_uri() . '/js/controllers/MainController.js');
+	wp_enqueue_script('PostController', get_stylesheet_directory_uri() . '/js/controllers/PostController.js');
+	wp_enqueue_script('PageController', get_stylesheet_directory_uri() . '/js/controllers/PageController.js');
+	wp_enqueue_script('CategoryController', get_stylesheet_directory_uri() . '/js/controllers/CategoryController.js');
 
 	//***************************************** npk Load custom JS *****************************************//
 
 	wp_enqueue_script('resp_slider_script', get_template_directory_uri() . '/includes/js/responsiveslides.min.js');
 	wp_enqueue_script('vanilla_jq', get_stylesheet_directory_uri() . '/js/vanilla_jq.js');
 
-	wp_localize_script('scripts', 'localized',
+	wp_localize_script('app_restaurant', 'localized',
 			array(
 				'partials' => get_stylesheet_directory_uri() . '/partials/'
 				)
