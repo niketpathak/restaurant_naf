@@ -1,4 +1,5 @@
-
+//Register the service
+app.factory('ThemeService', ['$http', ThemeService]);
 function ThemeService($http) {
 
 	var ThemeService = {
@@ -30,14 +31,14 @@ function ThemeService($http) {
 		}
 
 		//Get the category terms from wp-json
-		return $http.get('restaurant/wp-json/wp/v2/categories/').success(function(res){
+		return $http.get(doc_root+'/wp-json/wp/v2/categories/').success(function(res){
 			ThemeService.categories = res;
 			//console.log(ThemeService.categories);
 		});
 	};
 
 	ThemeService.getPosts = function(page) {
-		return $http.get('restaurant/wp-json/wp/v2/posts/?page=' + page + '&filter[posts_per_page]=1').success(function(res, status, headers){
+		return $http.get(doc_root+'/wp-json/wp/v2/posts/?page=' + page + '&filter[posts_per_page]=1').success(function(res, status, headers){
 			ThemeService.posts = res;
 			console.log("posts",ThemeService.posts);
 			page = parseInt(page);
@@ -62,12 +63,10 @@ function ThemeService($http) {
 	return ThemeService;
 }
 
-//Finally register the service
-app.factory('ThemeService', ['$http', ThemeService]);
-
 //********************************************** CUSTOM_NPK *********************************************//
 
-
+//Register the Service
+app.factory('CachePagesService', ['$http', CachePagesService]);
 function CachePagesService($http) {
 
 	var Cache = {
@@ -81,7 +80,7 @@ function CachePagesService($http) {
 			return;
 		}
 		//fetch pages from API, return promise
-		return $http.get('restaurant/wp-json/wp/v2/pages/').success(function(res){
+		return $http.get(doc_root+'/wp-json/wp/v2/pages/').success(function(res){
 			Cache.all_pages = res;
 			Cache.cached = true;
 			//console.log("in_Cache_Service",res);
@@ -103,5 +102,3 @@ function CachePagesService($http) {
 
 	return Cache;
 }
-//Register this Service
-app.factory('CachePagesService', ['$http', CachePagesService]);
