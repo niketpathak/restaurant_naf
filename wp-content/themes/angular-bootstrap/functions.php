@@ -101,6 +101,11 @@ function _tk_scripts() {
 	// load _tk styles
 	wp_enqueue_style( '_tk-style', get_stylesheet_uri() );
 
+	//***************************************** npk Load custom CSS *****************************************//
+	// load responsiveSlide styling
+	wp_enqueue_style( '_responsiveslidesstyles', get_template_directory_uri() . '/includes/css/responsiveslides.css', false, '4.1.0' );
+
+
 	// load bootstrap js
 	wp_enqueue_script('_tk-bootstrapjs', get_template_directory_uri().'/includes/resources/bootstrap/js/bootstrap.min.js', array('jquery') );
 
@@ -123,6 +128,10 @@ function _tk_scripts() {
 	wp_enqueue_script('angularjs-sanitize', get_stylesheet_directory_uri() . '/node_modules/angular-sanitize/angular-sanitize.min.js');
 	wp_enqueue_script('scripts', get_stylesheet_directory_uri() . '/js/scripts.js', array( 'angularjs', 'angularjs-route' ));
 	wp_enqueue_script('theme-service', get_stylesheet_directory_uri() . '/js/services.js');
+
+	//***************************************** npk Load custom JS *****************************************//
+
+	wp_enqueue_script('resp_slider_script', get_template_directory_uri() . '/includes/js/responsiveslides.min.js');
 	wp_enqueue_script('vanilla_jq', get_stylesheet_directory_uri() . '/js/vanilla_jq.js');
 
 	wp_localize_script('scripts', 'localized',
