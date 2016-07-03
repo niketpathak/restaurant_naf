@@ -131,10 +131,12 @@ function _tk_scripts() {
 	wp_enqueue_script('ThemeService', get_stylesheet_directory_uri() . '/js/services/ThemeService.js');
 	wp_enqueue_script('CachePagesService', get_stylesheet_directory_uri() . '/js/services/CachePagesService.js');
 	wp_enqueue_script('CacheCategoryService', get_stylesheet_directory_uri() . '/js/services/CacheCategoryService.js');
+	wp_enqueue_script('CacheMenuService', get_stylesheet_directory_uri() . '/js/services/CacheMenuService.js');
 	wp_enqueue_script('MainController', get_stylesheet_directory_uri() . '/js/controllers/MainController.js');
 	wp_enqueue_script('PostController', get_stylesheet_directory_uri() . '/js/controllers/PostController.js');
 	wp_enqueue_script('PageController', get_stylesheet_directory_uri() . '/js/controllers/PageController.js');
 	wp_enqueue_script('CategoryController', get_stylesheet_directory_uri() . '/js/controllers/CategoryController.js');
+	wp_enqueue_script('MenuController', get_stylesheet_directory_uri() . '/js/controllers/MenuController.js');
 
 	//***************************************** npk Load custom JS *****************************************//
 

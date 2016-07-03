@@ -10,6 +10,10 @@ app.config(function($routeProvider, $locationProvider) {
 		templateUrl: localized.partials + 'main.html',
 		controller: 'MainController'
 	})
+	.when('/menu', {
+		templateUrl: localized.partials + 'menu_content.html',
+		controller: 'menuController'
+	})
 	.when('/info/:slug/:page_id', {
 			templateUrl: localized.partials + 'page_content.html',
 			controller: 'pageController'
