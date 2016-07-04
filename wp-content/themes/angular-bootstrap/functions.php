@@ -208,3 +208,30 @@ function slug_register_price() {
 	);
 }
 add_action( 'rest_api_init', 'slug_register_price' );
+
+/**
+ * Get featured Image
+ * @param $post the input post
+ * @return mixed Image url on success, otherwise false
+ */
+function ccw_get_thumbnail_url($post){
+	if(has_post_thumbnail($post['id'])){
+		$imgArray = wp_get_attachment_image_src( get_post_thumbnail_id( $post['id'] ), array(150,150) );
+		$imgURL = $imgArray[0];
+		return $imgURL;
+	}else{
+		return false;
+	}
+}
+function ccw_insert_thumbnail_url() {
+	register_rest_field( 'post',
+		'featured_thumb',
+		array(
+			'get_callback'    => 'ccw_get_thumbnail_url',
+			'update_callback' => null,
+			'schema'          => null,
+		)
+	);
+}
+add_action( 'rest_api_init', 'ccw_insert_thumbnail_url' );
+
