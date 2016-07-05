@@ -4,10 +4,13 @@
 <ul ng-repeat="(key, value) in menu | groupBy: 'categories.category_name'">
     <h3>Category: {{ key }} </h3>
     <div ng-repeat="item in value">
-        <div ng-if="item.featured_thumb">
-            <img ng-show="item.featured_thumb" src="{{item.featured_thumb}}">
+        <div>
+            <hr>
+            {{ item.title.rendered }} - {{ item.Price | currency:'€' }}
+            <div ng-if="item.featured_thumb">
+                <img ng-show="item.featured_thumb" src="{{item.featured_thumb}}">
+            </div>
         </div>
-        {{ item.title.rendered }} - {{ item.Price | currency:'€' }}
         <br>
     </div>
 </ul>
