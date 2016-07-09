@@ -103,7 +103,9 @@ function _tk_scripts() {
 
 	//***************************************** npk Load custom CSS *****************************************//
 	// load responsiveSlide styling
+	wp_enqueue_style( '_theme_cust', get_template_directory_uri() . '/includes/css/theme_cust.css', false, '4.4.0' );
 	wp_enqueue_style( '_responsiveslidesstyles', get_template_directory_uri() . '/includes/css/responsiveslides.css', false, '4.1.0' );
+	wp_enqueue_style( '_override', get_template_directory_uri() . '/includes/css/override.css', false, '1.0.1' );
 
 
 	// load bootstrap js
@@ -138,6 +140,7 @@ function _tk_scripts() {
 	wp_enqueue_script('PageController', get_stylesheet_directory_uri() . '/js/controllers/PageController.js');
 	wp_enqueue_script('CategoryController', get_stylesheet_directory_uri() . '/js/controllers/CategoryController.js');
 	wp_enqueue_script('MenuController', get_stylesheet_directory_uri() . '/js/controllers/MenuController.js');
+	wp_enqueue_script('TestController', get_stylesheet_directory_uri() . '/js/controllers/TestController.js');
 
 	//***************************************** npk Load custom JS *****************************************//
 

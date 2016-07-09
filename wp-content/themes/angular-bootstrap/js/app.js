@@ -14,9 +14,13 @@ app.config(function($routeProvider, $locationProvider) {
 		templateUrl: localized.partials + 'menu_content.html',
 		controller: 'menuController'
 	})
+	.when('/test', {
+		templateUrl: localized.partials + 'test_page.html',
+		controller: 'testController'
+	})
 	.when('/info/:slug/:page_id', {
-			templateUrl: localized.partials + 'page_content.html',
-			controller: 'pageController'
+		templateUrl: localized.partials + 'page_content.html',
+		controller: 'pageController'
 		})
 	.when('/:slug', {
 		templateUrl: localized.partials + 'post_content.html',
