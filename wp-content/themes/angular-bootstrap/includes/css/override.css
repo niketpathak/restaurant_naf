@@ -7,7 +7,28 @@
     z-index: 100;
     border-top: 0;
 }
+/*central header text*/
 .header_text {
     position: absolute;
     top: 250px;
+    width: 90%;
+}
+
+/*Footer mods*/
+#footer .col-sm-4 {
+    text-align: center;
+}
+#footer .col-sm-4 li{
+    display: inline-block;
+    margin-right: 12px;
+    background-color: #191919;
+}
+.social-icons li a {
+    background-color: #191919;
+}
+#footer a:hover {
+    color: #c90;
+}
+#footer ul.unstyled {
+    margin: 25px 25px 0px 0px;
 }

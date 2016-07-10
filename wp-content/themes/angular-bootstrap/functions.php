@@ -141,6 +141,7 @@ function _tk_scripts() {
 	wp_enqueue_script('CategoryController', get_stylesheet_directory_uri() . '/js/controllers/CategoryController.js');
 	wp_enqueue_script('MenuController', get_stylesheet_directory_uri() . '/js/controllers/MenuController.js');
 	wp_enqueue_script('TestController', get_stylesheet_directory_uri() . '/js/controllers/TestController.js');
+	wp_enqueue_script('footerDirective', get_stylesheet_directory_uri() . '/js/directives/footerDirective.js');
 
 	//***************************************** npk Load custom JS *****************************************//
 
