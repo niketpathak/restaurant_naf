@@ -70,6 +70,9 @@ img {
 .pricing-item-list li img+.pricing-item-list-content {
     padding-left: 115px;
 }
+.pricing-item-list-content {
+    padding-left: 115px;
+}
 .pricing-item-list li h3 {
     margin-bottom: 5px;
     padding-right: 60px;
@@ -91,6 +94,30 @@ img {
 .divider-wrapper {
     max-height: 55px;
 }
+.menu_item_title:hover {
+    text-decoration: none;
+}
+/*menu hover effect*/
+.menu_item_title:hover {
+    color: hotPink;
+}
+@media (-webkit-min-device-pixel-ratio:0) {
+    .menu_item_title {
+        background-color: #c90;
+        background-image: -webkit-linear-gradient(left, hotPink 0%, orange 50%, transparent 50%);
+        background-position: 100% 0;
+        background-size: 200% 200%;
+        color: transparent;
+        -webkit-transition: .1s .2s;
+        -webkit-background-clip: text;
+    }
+    .menu_item_title:hover {
+        background-position: 0 0;
+        color: transparent;
+        transition: .4s 0;
+    }
+}
+
 
 /*MISC*/
 .container {

@@ -45,7 +45,7 @@ function CacheMenuService($http) {
 	Cache.getPost = function(post_id) {
 		for (var i = 0, len = Cache.menu.length; i < len; i++) {
 			//console.log("RunCount:"+i);
-			if (Cache.menu[i].id == page_id) {
+			if (Cache.menu[i].id == post_id) {
 				return Cache.menu[i];
 			}
 		}
