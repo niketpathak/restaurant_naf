@@ -1,16 +1,62 @@
+<div class="page page-id-41 page-template-default transparent-header pace-on pace-minimal wpb-js-composer js-comp-ver-4.11.2 vc_responsive">
+    <div id="" role="main">
+        <article id="post-41" class="post-41 page type-page status-publish hentry">
+            <section class="section  text-normal section-text-no-shadow section-inner-no-shadow section-normal section-opaque" >
+                <div class="background-media" style="background-image: url('/restaurant/wp-content/uploads/2016/07/header_test.jpg'); background-repeat:no-repeat; background-size:cover; background-attachment:fixed; background-position: 50% 0%;min-height:450px;margin-top:-150px" data-start="background-position: 50% 0px" data-0-top-bottom="background-position: 50% -80px">
+                </div>
 
-<h1>Menu</h1>
+                <div class="background-overlay grid-overlay-0 " style="background-color: rgba(0,0,0,0);"></div>
 
-<ul ng-repeat="(key, value) in menu | groupBy: 'categories.category_name'">
-    <h3>Category: {{ key }} </h3>
-    <div ng-repeat="item in value">
-        <div>
-            <hr>
-            {{ item.title.rendered }} - {{ item.Price | currency:'€' }}
-            <div ng-if="item.featured_thumb">
-                <img ng-show="item.featured_thumb" src="{{item.featured_thumb}}">
+                <div class="container container-vertical-default">
+                    <div class="row vertical-default">
+                        <div class="col-md-12 text-center small-screen-default header_text"  ><h1 class="text-center  element-top-190 element-bottom-20 text-light os-animation hyper default" data-os-animation="fadeIn" data-os-animation-delay="0.1s" >
+                            Menu</h1><div class="figure element-top-20 element-bottom-100   os-animation" data-os-animation="fadeIn" data-os-animation-delay="0.3s">
+                <span class="figure-image">
+            <img width="260" height="54" src="http://d169hzb81ub7u3.cloudfront.net/restaurant/wp-content/uploads/sites/14/2014/12/decor-1-big-white.png" class="attachment-full size-full" alt="" />            </span>
+                        </div>
+                        </div>        </div>
+                </div>
+            </section>
+        </article>
+        <section class="section  text-normal section-text-no-shadow section-inner-no-shadow section-normal section-opaque" style="background-image: url('/restaurant/wp-content/themes/angular-bootstrap/includes/img/bg-4.jpg'); background-repeat:no-repeat; background-size:cover; background-attachment:scroll; background-position: 50% 0%;" >
+
+            <div class="background-overlay grid-overlay-0 " style="background-color: rgba(0,0,0,0);"></div>
+            <div class="container container-vertical-default">
+                <div class="row vertical-default">
+                    <div class="col-md-12     text-default small-screen-default"  >
+                        <div class="divider-wrapper " style="visibility:hidden;background-color:#FFFFF;height: 55px;"></div>
+                        <div class="row">
+                            <div ng-repeat="(key, value) in menu | groupBy: 'categories.category_name'" class="col-md-10 col-md-offset-1 text-default small-screen-default">
+                                <h2 class="text-center  element-top-20 element-bottom-0 text-normal os-animation big default" data-os-animation="fadeIn" data-os-animation-delay="0s" >
+                                    {{ key }}
+                                </h2>
+                                <div class="figure element-top-20 element-bottom-20  block text-center os-animation" data-os-animation="fadeIn" data-os-animation-delay="0s">
+                            <span class="figure-image">
+                            <img width="260" height="31" src="http://d169hzb81ub7u3.cloudfront.net/restaurant/wp-content/uploads/sites/14/2014/12/decor-2-big-gold.png" class="attachment-full size-full" alt="" />            </span>
+                                </div>
+                                <ul class="pricing-item-list  text-normal element-top-20 element-bottom-20" data-os-animation="none" data-os-animation-delay="0s">
+                                    <li ng-repeat="item in value" class="pricing-cirle element-top-0 element-bottom-50 os-animation " data-os-animation="fadeIn" data-os-animation-delay="0s">
+                                        <img width="90" height="90" src="http://d169hzb81ub7u3.cloudfront.net/restaurant/wp-content/uploads/sites/14/2014/12/food-thumb-2.jpg" class="attachment-full size-full" alt="Menu Item" />
+                                        <div class="pricing-item-list-content">
+                                            <h3>
+                                                {{ item.title.rendered }}  <span>{{ item.Price | currency:'€' }}</span>
+                                            </h3>
+                                            <p>
+                                                Fillet of beef, chicken, bamboo, onions &amp; garlic.
+                                            </p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="divider-wrapper " style="visibility:hidden;background-color:#FFFFF;height: 55px;"></div>
+                    </div>
+                </div>
             </div>
-        </div>
-        <br>
+
+        </section>
     </div>
-</ul>
+</div>
+
+
+<footer-directive info-foot="doc_root"></footer-directive>
