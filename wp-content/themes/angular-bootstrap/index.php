@@ -19,7 +19,7 @@ get_header(); ?>
 		
 		<div ng-view></div>
 
-		<?php _tk_content_nav( 'nav-below' ); ?>
+		<?php // _tk_content_nav( 'nav-below' ); ?>
 
 	<?php else : ?>
 
