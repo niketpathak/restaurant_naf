@@ -18,7 +18,7 @@
                 </div>
             </section>
         </article>
-        <section class="section  text-normal section-text-no-shadow section-inner-no-shadow section-normal section-opaque" style="background-image: url('/restaurant/wp-content/themes/angular-bootstrap/includes/img/bg-4.jpg'); background-repeat:no-repeat; background-size:cover; background-attachment:scroll; background-position: 50% 0%;" >
+        <section class="section  text-normal section-text-no-shadow section-inner-no-shadow section-normal section-opaque" style="background-image: url('/{{doc_root}}/wp-content/themes/angular-bootstrap/includes/img/bg-4.jpg'); background-repeat:no-repeat; background-size:cover; background-attachment:scroll; background-position: 50% 0%;" >
 
             <div class="background-overlay grid-overlay-0 " style="background-color: rgba(0,0,0,0);"></div>
             <div class="container container-vertical-default">
@@ -36,60 +36,63 @@
                                     <!--<hr>-->
                                 <!--</div>-->
                             <!--</div>-->
-
-                            <div ng-repeat="(key, value) in menu_lhs" class="col-md-6 text-default small-screen-default">
-                                <h2 class="text-center  element-top-20 element-bottom-0 text-normal os-animation big default" data-os-animation="fadeIn" data-os-animation-delay="0s" >
-                                    {{value[0].categories.category_name}}
-                                </h2>
-                                <div class="figure element-top-20 element-bottom-20  block text-center os-animation" data-os-animation="fadeIn" data-os-animation-delay="0s">
-                            <span class="figure-image">
-                            <img width="260" height="31" ng-src="/{{doc_root}}/wp-content/themes/angular-bootstrap/includes/img/decor-2-big-gold.png" class="attachment-full size-full" alt="" />            </span>
+                            <div class="col-md-6">
+                                <div ng-repeat="(key, value) in menu_lhs" class=" text-default small-screen-default">
+                                    <h2 class="text-center  element-top-20 element-bottom-0 text-normal os-animation big default" data-os-animation="fadeIn" data-os-animation-delay="0s" >
+                                        {{value[0].categories.category_name}}
+                                    </h2>
+                                    <div class="figure element-top-20 element-bottom-20  block text-center os-animation" data-os-animation="fadeIn" data-os-animation-delay="0s">
+                                <span class="figure-image">
+                                <img width="260" height="31" ng-src="/{{doc_root}}/wp-content/themes/angular-bootstrap/includes/img/decor-2-big-gold.png" class="attachment-full size-full" alt="" />            </span>
+                                    </div>
+                                    <ul class="pricing-item-list  text-normal element-top-20 element-bottom-20" data-os-animation="none" data-os-animation-delay="0s">
+                                        <li ng-repeat="item in value" ng-bind-html-unsafe="item.excerpt.rendered" class="pricing-cirle element-top-0 element-bottom-50 os-animation " data-os-animation="fadeIn" data-os-animation-delay="0s">
+                                            <a ng-if="item.featured_thumb" href="/{{doc_root}}/#/{{item.slug}}">
+                                                <img  ng-show="item.featured_thumb" width="90" height="90" src="{{item.featured_thumb}}" class="attachment-full size-full" alt="Menu Item">
+                                            </a>
+                                            <div class="pricing-item-list-content" ng-class="{'full_width_menu_item': item.featured_thumb == false}">
+                                                <h3>
+                                                    <a href="/{{doc_root}}/#/{{item.slug}}" class="menu_item_title">
+                                                        {{ item.title.rendered }}
+                                                    </a>
+                                                    <span>{{ item.Price | currency:'€' }}</span>
+                                                </h3>
+                                                <p>
+                                                    {{ item.excerpt.rendered | stripHtmlTags}}
+                                                </p>
+                                            </div>
+                                        </li>
+                                    </ul>
                                 </div>
-                                <ul class="pricing-item-list  text-normal element-top-20 element-bottom-20" data-os-animation="none" data-os-animation-delay="0s">
-                                    <li ng-repeat="item in value" ng-bind-html-unsafe="item.excerpt.rendered" class="pricing-cirle element-top-0 element-bottom-50 os-animation " data-os-animation="fadeIn" data-os-animation-delay="0s">
-                                        <a ng-if="item.featured_thumb" href="/{{doc_root}}/#/{{item.slug}}">
-                                            <img  ng-show="item.featured_thumb" width="90" height="90" src="{{item.featured_thumb}}" class="attachment-full size-full" alt="Menu Item">
-                                        </a>
-                                        <div class="pricing-item-list-content" ng-class="{'full_width_menu_item': item.featured_thumb == false}">
-                                            <h3>
-                                                <a href="/{{doc_root}}/#/{{item.slug}}" class="menu_item_title">
-                                                    {{ item.title.rendered }}
-                                                </a>
-                                                <span>{{ item.Price | currency:'€' }}</span>
-                                            </h3>
-                                            <p>
-                                                {{ item.excerpt.rendered | stripHtmlTags}}
-                                            </p>
-                                        </div>
-                                    </li>
-                                </ul>
                             </div>
-                            <div ng-repeat="(key, value) in menu_rhs" class="col-md-6 text-default small-screen-default">
-                                <h2 class="text-center  element-top-20 element-bottom-0 text-normal os-animation big default" data-os-animation="fadeIn" data-os-animation-delay="0s" >
-                                    {{value[0].categories.category_name}}
-                                </h2>
-                                <div class="figure element-top-20 element-bottom-20  block text-center os-animation" data-os-animation="fadeIn" data-os-animation-delay="0s">
-                            <span class="figure-image">
-                            <img width="260" height="31" ng-src="/{{doc_root}}/wp-content/themes/angular-bootstrap/includes/img/decor-2-big-gold.png" class="attachment-full size-full" alt="" />            </span>
+                            <div class="col-md-6">
+                                <div ng-repeat="(key, value) in menu_rhs" class="text-default small-screen-default">
+                                    <h2 class="text-center  element-top-20 element-bottom-0 text-normal os-animation big default" data-os-animation="fadeIn" data-os-animation-delay="0s" >
+                                        {{value[0].categories.category_name}}
+                                    </h2>
+                                    <div class="figure element-top-20 element-bottom-20  block text-center os-animation" data-os-animation="fadeIn" data-os-animation-delay="0s">
+                                <span class="figure-image">
+                                <img width="260" height="31" ng-src="/{{doc_root}}/wp-content/themes/angular-bootstrap/includes/img/decor-2-big-gold.png" class="attachment-full size-full" alt="" />            </span>
+                                    </div>
+                                    <ul class="pricing-item-list  text-normal element-top-20 element-bottom-20" data-os-animation="none" data-os-animation-delay="0s">
+                                        <li ng-repeat="item in value" ng-bind-html-unsafe="item.excerpt.rendered" class="pricing-cirle element-top-0 element-bottom-50 os-animation " data-os-animation="fadeIn" data-os-animation-delay="0s">
+                                            <a ng-if="item.featured_thumb" href="/{{doc_root}}/#/{{item.slug}}">
+                                                <img  ng-show="item.featured_thumb" width="90" height="90" src="{{item.featured_thumb}}" class="attachment-full size-full" alt="Menu Item">
+                                            </a>
+                                            <div class="pricing-item-list-content" ng-class="{'full_width_menu_item': item.featured_thumb == false}">
+                                                <h3>
+                                                    <a href="/{{doc_root}}/#/{{item.slug}}" class="menu_item_title">
+                                                        {{ item.title.rendered }}
+                                                    </a>
+                                                    <span>{{ item.Price | currency:'€' }}</span>
+                                                </h3>
+                                                <p>
+                                                    {{ item.excerpt.rendered | stripHtmlTags}}
+                                                </p>
+                                            </div>
+                                        </li>
+                                    </ul>
                                 </div>
-                                <ul class="pricing-item-list  text-normal element-top-20 element-bottom-20" data-os-animation="none" data-os-animation-delay="0s">
-                                    <li ng-repeat="item in value" ng-bind-html-unsafe="item.excerpt.rendered" class="pricing-cirle element-top-0 element-bottom-50 os-animation " data-os-animation="fadeIn" data-os-animation-delay="0s">
-                                        <a ng-if="item.featured_thumb" href="/{{doc_root}}/#/{{item.slug}}">
-                                            <img  ng-show="item.featured_thumb" width="90" height="90" src="{{item.featured_thumb}}" class="attachment-full size-full" alt="Menu Item">
-                                        </a>
-                                        <div class="pricing-item-list-content" ng-class="{'full_width_menu_item': item.featured_thumb == false}">
-                                            <h3>
-                                                <a href="/{{doc_root}}/#/{{item.slug}}" class="menu_item_title">
-                                                    {{ item.title.rendered }}
-                                                </a>
-                                                <span>{{ item.Price | currency:'€' }}</span>
-                                            </h3>
-                                            <p>
-                                                {{ item.excerpt.rendered | stripHtmlTags}}
-                                            </p>
-                                        </div>
-                                    </li>
-                                </ul>
                             </div>
                         </div>
                         <div class="divider-wrapper " style="visibility:hidden;background-color:#FFFFF;height: 55px;"></div>
