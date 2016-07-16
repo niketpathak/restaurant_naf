@@ -38,6 +38,7 @@
 /*MENU Page*/
 .pricing-item-list li.pricing-cirle img {
     border-radius: 50%;
+    padding:5px;
 }
 .element-bottom-20 {
     margin-bottom: 20px!important;
@@ -71,7 +72,8 @@ img {
     padding-left: 115px;
 }
 .pricing-item-list-content {
-    padding-left: 115px;
+    padding-left: 90px;
+    padding-right: 25px;
 }
 .pricing-item-list li h3 {
     margin-bottom: 5px;
@@ -81,12 +83,18 @@ img {
     padding-bottom: 10px;
     border-bottom-style: solid;
     border-bottom-width: 1px;
+    font-size: 2.2rem;
 }
 .pricing-item-list li span {
     display: block;
     position: absolute;
     right: 0;
     top: 0;
+    font-size: 2.2rem;
+    padding-top: 5px;
+}
+.full_width_menu_item {
+    padding-left: 0px;
 }
 .hentry {
     margin: 0;

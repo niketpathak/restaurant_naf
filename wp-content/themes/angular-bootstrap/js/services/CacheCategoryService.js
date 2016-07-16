@@ -12,7 +12,9 @@ function CacheCategoryService($http) {
 
 	var Cache = {
 		all_categories: [],
-		cached: false
+		cached: false,
+		LHS: [],
+		RHS: []
 	};
 
 	Cache.getAllCategories = function() {
@@ -37,8 +39,18 @@ function CacheCategoryService($http) {
 		}
 	}
 
+	Cache.setLHS = function(lhs_input) {
+		Cache.LHS = lhs_input;
+	}
+
+	Cache.setRHS = function(rhs_input) {
+		Cache.RHS = rhs_input;
+	}
+
 	Cache.clear = function(){
 		Cache.cached = false;
+		Cache.LHS = [];
+		Cache.RHS = [];
 	}
 
 	return Cache;

@@ -22,7 +22,7 @@ function CacheMenuService($http) {
 			return;
 		}
 		//fetch posts from API, return promise
-		return $http.get(doc_root+'/wp-json/wp/v2/posts/').success(function(res){
+		return $http.get(doc_root+'/wp-json/wp/v2/posts?per_page=100').success(function(res){
 			Cache.menu = res;
 			Cache.cached = true;
 			//console.log("in_pageCache_Service",res);
