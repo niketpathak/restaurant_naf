@@ -36,7 +36,7 @@
                                     <!--<hr>-->
                                 <!--</div>-->
                             <!--</div>-->
-                            <div class="col-md-6">
+                            <div class="col-md-6 two_cols_padd">
                                 <div ng-repeat="(key, value) in menu_lhs" class=" text-default small-screen-default">
                                     <h2 class="text-center  element-top-20 element-bottom-0 text-normal os-animation big default" data-os-animation="fadeIn" data-os-animation-delay="0s" >
                                         {{value[0].categories.category_name}}
@@ -46,7 +46,7 @@
                                 <img width="260" height="31" ng-src="/{{doc_root}}/wp-content/themes/angular-bootstrap/includes/img/decor-2-big-gold.png" class="attachment-full size-full" alt="" />            </span>
                                     </div>
                                     <ul class="pricing-item-list  text-normal element-top-20 element-bottom-20" data-os-animation="none" data-os-animation-delay="0s">
-                                        <li ng-repeat="item in value" ng-bind-html-unsafe="item.excerpt.rendered" class="pricing-cirle element-top-0 element-bottom-50 os-animation " data-os-animation="fadeIn" data-os-animation-delay="0s">
+                                        <li ng-repeat="item in value" ng-bind-html-unsafe="item.excerpt.rendered" class="pricing-cirle element-top-0 element-bottom-35 os-animation " data-os-animation="fadeIn" data-os-animation-delay="0s">
                                             <a ng-if="item.featured_thumb" href="/{{doc_root}}/#/{{item.slug}}">
                                                 <img  ng-show="item.featured_thumb" width="90" height="90" src="{{item.featured_thumb}}" class="attachment-full size-full" alt="Menu Item">
                                             </a>
@@ -65,7 +65,7 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-6 two_cols_padd">
                                 <div ng-repeat="(key, value) in menu_rhs" class="text-default small-screen-default">
                                     <h2 class="text-center  element-top-20 element-bottom-0 text-normal os-animation big default" data-os-animation="fadeIn" data-os-animation-delay="0s" >
                                         {{value[0].categories.category_name}}
