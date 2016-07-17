@@ -1,19 +1,27 @@
+<section class="section text-normal section-text-no-shadow section-inner-no-shadow section-normal section-opaque post-section" style="background-image: url('/restaurant/wp-content/themes/angular-bootstrap/includes/img/bg-4.jpg'); background-repeat:no-repeat; background-size:cover; background-attachment:scroll; background-position: 50% 0%;">
 
-<h1>{{singlepost.title.rendered}}</h1>
+	<div class="background-overlay grid-overlay-0 " style="background-color: rgba(0,0,0,0);"></div>
+	<div class="container">
+		<span class="spost_price">
+			{{singlepost.Price | currency:'€'}}
+		</span>
+		<h1 class="text-center">
+			<span ng-if="singlepost.featured_thumb" class="spost_featured_thmb">
+				<img  ng-show="singlepost.featured_thumb" width="50" height="50" src="{{singlepost.featured_thumb}}" class="attachment-full size-full" alt="{{singlepost.title.rendered}}">
+			</span>
+			{{singlepost.title.rendered}}
+		</h1>
+		<div class="figure element-top-20 element-bottom-20  block text-center os-animation" data-os-animation="fadeIn" data-os-animation-delay="0s">
+			<span class="figure-image">
+			<img width="260" height="31" ng-src="/restaurant/wp-content/themes/angular-bootstrap/includes/img/decor-2-big-gold.png" class="attachment-full size-full" alt="" src="/restaurant/wp-content/themes/angular-bootstrap/includes/img/decor-2-big-gold.png">            </span>
+		</div>
+		<div class="rendered-content-container" ng-bind-html="postContent">
 
-<div class="rendered-content-container" ng-bind-html="postContent">
+		</div>
+	</div>
+</section>
 
-</div>
 
-<!--Note: At the moment we don't need to care about comments, etc-->
-<!--<ul>-->
-	<!--<li ng-repeat="post in singlepost">-->
-		<!--<a href="/{{post.slug}}" ng-bind-html="post.title"></a>-->
-		<!--<a href="/{{post.slug}}" ng-if="post.featured_image_thumbnail_url"><img ng-src="{{post.featured_image_thumbnail_url}}" alt="{{post.featured_image.title.rendered}}" /></a>-->
-		<!--<div ng-bind-html="post.excerpt.rendered"></div>-->
-	<!--</li>-->
+<footer-directive info-foot="doc_root"></footer-directive>
 
-<!--</ul>-->
 <p ng-if="is404">{{errorMessage}}</p>
-
-<br />

@@ -7,6 +7,9 @@
     z-index: 100;
     border-top: 0;
 }
+.navbar {
+    margin-bottom: 0px;
+}
 /*central header text*/
 .header_text {
     position: absolute;
@@ -130,7 +133,27 @@ img {
     }
 }
 
-
+/*SINGLE POSTS PAGE*/
+.post-section {
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+.spost_price {
+    position: relative;
+    left: 90%;
+    top: 50px;
+    background-color: #c90;
+    color: #fff;
+    padding: 3px 12px;
+}
+.spost_featured_thmb {
+    margin-right: 10px;
+}
+.spost_featured_thmb img {
+    border: 2px solid #c90;
+    border-radius: 50%;
+    margin-top: -7px;
+}
 /*MISC*/
 .container {
     padding: 0 15px 0px 15px;
