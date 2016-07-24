@@ -154,10 +154,31 @@ img {
     border-radius: 50%;
     margin-top: -7px;
 }
+
+/*CONTACT FORM*/
+#contact_page .form-icon-group i {
+    font-size: 14px;
+    display: inline-block;
+    position: absolute;
+    left: 25px;
+    top: 10px;
+}
+#contact_page .form-icon-group > span > input,textarea {
+    text-indent: 20px;
+}
+
 /*MISC*/
 .container {
     padding: 0 15px 0px 15px;
 }
 .main-content-inner {
      padding-bottom: 0;
+}
+.fsize_header {
+    font-size: 8rem;
+}
+
+.section-padded {
+    padding-top: 70px;
+    padding-bottom: 10px;
 }
