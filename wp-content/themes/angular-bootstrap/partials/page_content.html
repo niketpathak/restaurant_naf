@@ -1,6 +1,7 @@
 
-<h1>{{singlepage.title.rendered}}</h1>
+<!--<h1>{{singlepage.title.rendered}}</h1>-->
 
-<div class="rendered-content-container" ng-bind-html="pageContent">
+<div class="rendered-content-container remove-paragraph" ng-bind-html="pageContent" compile-Template-Directive>
 
 </div>
+<footer-directive info-foot="doc_root"></footer-directive>
