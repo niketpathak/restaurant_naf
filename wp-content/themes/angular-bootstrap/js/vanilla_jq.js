@@ -8,6 +8,7 @@
 			$(this).parent().addClass("active");
 			//return false;
 		});
+		$('.menu').addClass('menu_transparent');	//make menu transparent on page load
 
 		// **** sticky nav
 		var stickyNavTop = $('#masthead').offset().top;
@@ -17,11 +18,20 @@
 				$('#masthead').addClass('sticky');
 				$('.outermost').css('margin-top',"120px");
 
+				//make menu_dark/bright by position
+				if(scrollTop < stickyNavTop + 90) {
+					$('.menu').addClass('menu_transparent');
+				} else {
+					$('.menu').removeClass('menu_transparent');
+				}
 			} else {
 				$('#masthead').removeClass('sticky');
 				$('.outermost').css('margin-top',"0px");
+				$('.menu').addClass('menu_transparent');	//keep transparency at top
 			}
 		});
 
 	}); // doc.ready fn
 }(jQuery));
+
+// background: rgba(0, 0, 0, 0.87);

@@ -10,6 +10,13 @@
 .navbar {
     margin-bottom: 0px;
 }
+.menu_transparent {
+    background: transparent;
+    box-shadow: 0 -1px 0px 0 rgba(255, 255, 255, 0.1) inset !important;
+}
+.color_white {
+    color: #FFF !important;
+}
 /*central header text*/
 .header_text {
     position: absolute;
@@ -181,4 +188,7 @@ img {
 .section-padded {
     padding-top: 70px;
     padding-bottom: 10px;
+}
+.remove-paragraph > p {
+    display: none;
 }
