@@ -1,19 +1,173 @@
-<h1>Categories</h1>
-<ul>
-	<li ng-repeat="category in data.categories">
-		<span ng-if="current_category_id && category.ID == current_category_id" ng-bind-html="category.name"></span>
-		<a ng-if="!current_category_id || category.ID != current_category_id" href="/{{doc_root}}/#/category/{{category.slug}}/{{category.id}}" ng-bind-html="category.name"></a>
-	</li>
-</ul>
+<div class="home page page-id-25 page-template-default transparent-header pace-on pace-minimal wpb-js-composer js-comp-ver-4.11.2 vc_responsive">
+<div class="pace-overlay"></div>
 
-<p>{{data.pageTitle}}</p>
-<ul>
-	<li ng-repeat="post in data.posts">
-		<a href="/{{doc_root}}/#/{{post.slug}}" ng-bind-html="post.title.rendered"></a>
-		<a href="/{{doc_root}}/#/{{post.slug}}" ng-if="post.featured_image_thumbnail_url"><img ng-src="{{post.featured_image_thumbnail_url}}" alt="{{post.featured_image.title.rendered}}" /></a>
-		<div ng-bind-html="post.excerpt.rendered"></div>
-	</li>
-</ul>
-<p ng-if="is404">{{errorMessage}}</p>
+	<div id="main_homepage" role="main"><article id="post-25" class="post-25 page type-page status-publish hentry">
+	<section class="section  text-normal section-text-no-shadow section-inner-no-shadow section-normal section-opaque" >
+		<div class="background-media" style="background-image: url('/{{doc_root}}/wp-content/themes/angular-bootstrap/includes/img/food-bg-1.jpg'); background-repeat:no-repeat; background-size:cover; background-attachment:fixed; background-position: 50% 0%;min-height:725px;margin-top:-150px" data-start="background-position: 50% 0px" data-0-top-bottom="background-position: 50% -85px">
+		</div>
 
-<br />
+		<div class="background-overlay grid-overlay-0 " style="background-color: rgba(0,0,0,0);"></div>
+
+		<div class="container container-vertical-default">
+			<div class="row vertical-default">
+				<div class="col-md-12 text-center small-screen-default header_text">
+					<div class="divider-wrapper " style="visibility:hidden;background-color:#FFFFF">
+						<div class="visible-xs" style="height:50px;"></div>
+						<div class="visible-sm" style="height:100px;"></div>
+						<div class="visible-md" style="height:240px;"></div>
+						<div class="visible-lg" style="height:240px;"></div>
+					</div>
+					<h1 class="text-center  element-top-0 element-bottom-0 text-light os-animation hyper default fsize_header" data-os-animation="fadeIn" data-os-animation-delay="0.1s" >
+					the right ingredients</h1>
+					<h1 class="text-center  element-top-0 element-bottom-20 text-light os-animation hyper default fsize_header" data-os-animation="fadeIn" data-os-animation-delay="0.2s" >
+					for the right food</h1>
+					<div class="figure element-top-0 element-bottom-0  " data-os-animation="none" data-os-animation-delay="0.3s">
+            			<span class="figure-image">
+        					<img width="260" height="54" ng-src="/{{doc_root}}/wp-content/themes/angular-bootstrap/includes/img/decor-1-big-white.png" class="attachment-full size-full" alt="" />            </span>
+				</div>
+					<div class="divider-wrapper " style="visibility:hidden;background-color:#FFFFF">
+						<div class="visible-xs" style="height:24px;"></div>
+						<div class="visible-sm" style="height:24px;"></div>
+						<div class="visible-md" style="height:24px;"></div>
+						<div class="visible-lg" style="height:24px;"></div>
+					</div>
+					<a ng-href="/{{doc_root}}/#/info/reservations/20" class="btn btn-link btn-lg  text-light  btn-header scroll-to-id element-left-10 element-right-10 element-top-20 element-bottom-20 os-animation" target="_self"   data-os-animation="fadeIn" data-os-animation-delay="0.5s">
+						BOOK A TABLE
+					</a>
+					<a ng-href="/{{doc_root}}/#/menu" class="btn btn-warning btn-lg  text-normal  btn-header element-left-10 element-right-10 element-top-20 element-bottom-20 os-animation" target="_self"   data-os-animation="fadeIn" data-os-animation-delay="0.7s">
+						SEE THE MENU
+					</a>
+					<div class="divider-wrapper " style="visibility:hidden;background-color:#FFFFF">
+						<div class="visible-xs" style="height:50px;"></div>
+						<div class="visible-sm" style="height:100px;"></div>
+						<div class="visible-md" style="height:100px;"></div>
+						<div class="visible-lg" style="height:100px;"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="section  text-normal section-text-no-shadow section-inner-no-shadow section-normal section-opaque section-padded" style="background-image: url('/{{doc_root}}/wp-content/themes/angular-bootstrap/includes/img/bg-1.jpg'); background-repeat:no-repeat; background-size:cover; background-attachment:fixed; background-position: 50% 0%;">
+	<div class="background-overlay grid-overlay-0 " style="background-color: rgba(0,0,0,0);"></div>
+
+	<div class="container container-vertical-middle">
+		<div class="row vertical-middle">
+			<div class="col-md-5     text-center small-screen-default"  ><h1 class="text-center  element-top-80 element-bottom-0 text-normal os-animation normal default" data-os-animation="fadeIn" data-os-animation-delay="0.1s" >
+				Just the Right Food</h1><div class="figure element-top-10 element-bottom-20   os-animation" data-os-animation="fadeIn" data-os-animation-delay="0.2s">
+            <span class="figure-image">
+        <img width="260" height="31" ng-src="/{{doc_root}}/wp-content/themes/angular-bootstrap/includes/img/decor-2-big-gold.png" class="attachment-full size-full" alt="" />            </span>
+			</div>
+				<div class="col-text-1 text-normal  element-top-0 element-bottom-20 os-animation" data-os-animation="fadeIn" data-os-animation-delay="0.3s">
+					<p>If you&#8217;ve been to one of our restaurants, you&#8217;ve seen &#8211; and tasted &#8211; what keeps our customers coming back for more. Perfect materials and freshly baked food, delicious Lambda cakes,  muffins, and gourmet coffees make us hard to resist! Stop in today and check us out!</p>
+				</div><div class="figure element-top-0 element-bottom-80   os-animation" data-os-animation="fadeIn" data-os-animation-delay="0.2s">
+            <span class="figure-image">
+        <img width="334" height="256" src="http://d169hzb81ub7u3.cloudfront.net/restaurant/wp-content/uploads/sites/14/2014/12/chef.png" class="attachment-full size-full" alt="" srcset="http://d169hzb81ub7u3.cloudfront.net/restaurant/wp-content/uploads/sites/14/2014/12/chef.png 334w, wp-content/uploads/sites/14/2014/12/chef-300x229.png 300w" sizes="(max-width: 334px) 100vw, 334px" />            </span>
+				</div>
+			</div><div class="col-md-7     text-center small-screen-default"  ><div class="figure element-top-0 element-bottom-0   os-animation" data-os-animation="fadeInRight" data-os-animation-delay="0.5s">
+            <span class="figure-image">
+        <img width="800" height="867" src="http://d169hzb81ub7u3.cloudfront.net/restaurant/wp-content/uploads/sites/14/2014/12/sample-plate.png" class="attachment-full size-full" alt="" srcset="http://d169hzb81ub7u3.cloudfront.net/restaurant/wp-content/uploads/sites/14/2014/12/sample-plate.png 800w, wp-content/uploads/sites/14/2014/12/sample-plate-276x300.png 276w" sizes="(max-width: 800px) 100vw, 800px" />            </span>
+		</div>
+		</div>        </div>
+	</div>
+</section>
+	<section class="section  text-normal section-text-no-shadow section-inner-no-shadow section-normal section-opaque" >
+	<div class="background-media" style="background-image: url('/{{doc_root}}/wp-content/themes/angular-bootstrap/includes/img/food-bg-2.jpg'); background-repeat:no-repeat; background-size:cover; background-attachment:fixed; background-position: 50% 0%;" data-start="background-position: 50% 0px" data-0-top-bottom="background-position: 50% -80px">
+
+	<div class="background-overlay grid-overlay-0 " style="background-color: rgba(0,0,0,0);"></div>
+
+	<div class="container container-vertical-default">
+		<div class="row vertical-default">
+			<div class="col-md-6     text-center small-screen-default"  ></div>
+			<div class="col-md-6     text-center small-screen-default" style="margin-top: 55px;margin-bottom: 35px" >
+				<div class="panel panel-default  element-top-100 element-bottom-100 os-animation" data-os-animation="fadeIn" data-os-animation-delay="0.4s" style="border: none;">
+					<div class="panel-body" style="background-color:rgba(0, 0, 0, 0.69);">
+						<h1 class="text-center  element-top-20 element-bottom-0 text-light os-animation normal default" data-os-animation="fadeIn" data-os-animation-delay="0.1s">
+							Fine Dining
+						</h1>
+						<div class="figure element-top-10 element-bottom-20   os-animation" data-os-animation="fadeIn" data-os-animation-delay="0.2s">
+            <span class="figure-image">
+        <img width="260" height="31" ng-src="/{{doc_root}}/wp-content/themes/angular-bootstrap/includes/img/decor-2-big-white.png" class="attachment-full size-full" alt="" />            </span>
+			</div>
+				<div class="col-text-1 text-light  element-top-0 element-bottom-20 os-animation reduce_font_wt" data-os-animation="fadeIn" data-os-animation-delay="0.3s">
+					<p>If you&#8217;ve been to one of our restaurants, you&#8217;ve seen &#8211; and tasted &#8211; what keeps our customers coming back for more. Perfect materials and freshly baked food, delicious Lambda cakes,  muffins, and gourmet coffees make us hard to resist! Stop in today and check us out!</p>
+					<p>We have so much more in store than just our fabulous fresh bagels, muffins, and cheese. Our restaurants offer a unique atmosphere in which you can order to-go or linger in our dining area with our wide assortment of breakfast and lunch items.</p>
+				</div>    </div>
+		</div></div>        </div>
+	</div>
+	</div>
+	</section>
+	<section class="section  text-normal section-text-no-shadow section-inner-no-shadow section-normal section-opaque" style="background-image: url('/{{doc_root}}/wp-content/themes/angular-bootstrap/includes/img/bg-1.jpg'); background-repeat:no-repeat; background-size:cover; background-attachment:fixed; background-position: 50% 0%;">
+	<div class="background-overlay grid-overlay-0 " style="background-color: rgba(0,0,0,0);"></div>
+
+	<div class="container container-vertical-middle">
+		<div class="row vertical-middle">
+			<div class="col-md-5 text-center small-screen-default" style="padding-top: 90px;">
+				<h1 class="text-center  element-top-80 element-bottom-0 text-normal os-animation normal default" data-os-animation="fadeIn" data-os-animation-delay="0.1s" >
+				Home Made Pasta
+				</h1>
+				<div class="figure element-top-10 element-bottom-20   os-animation" data-os-animation="fadeIn" data-os-animation-delay="0.2s">
+            		<span class="figure-image">
+        				<img width="260" height="31" ng-src="/{{doc_root}}/wp-content/themes/angular-bootstrap/includes/img/decor-2-big-gold.png" class="attachment-full size-full" alt="" />            </span>
+				</div>
+				<div class="col-text-1 text-normal  element-top-0 element-bottom-20 os-animation add_line_height" data-os-animation="fadeIn" data-os-animation-delay="0.3s">
+					<p>If you&#8217;ve been to one of our restaurants, you&#8217;ve seen &#8211; and tasted &#8211; what keeps our customers coming back for more. Perfect materials and freshly baked food, delicious Lambda cakes,  muffins, and gourmet coffees make us hard to resist! Stop in today and check us out!</p>
+				</div><div class="row "><div class="col-md-2-4     text-default small-screen-default"  ></div><div class="col-md-2-4     text-default small-screen-default"  ><div class="figure element-top-20 element-bottom-20   os-animation" data-os-animation="fadeIn" data-os-animation-delay="0.4s">
+            <span class="figure-image">
+        <img width="300" height="300" src="http://d169hzb81ub7u3.cloudfront.net/restaurant/wp-content/uploads/sites/14/2014/12/pasta-3.png" class="attachment-full size-full" alt="" srcset="http://d169hzb81ub7u3.cloudfront.net/restaurant/wp-content/uploads/sites/14/2014/12/pasta-3.png 300w, wp-content/uploads/sites/14/2014/12/pasta-3-150x150.png 150w" sizes="(max-width: 300px) 100vw, 300px" />            </span>
+				</div>
+				</div><div class="col-md-2-4     text-default small-screen-default"  ><div class="figure element-top-20 element-bottom-20   os-animation" data-os-animation="fadeIn" data-os-animation-delay="0.7s">
+            <span class="figure-image">
+        <img width="300" height="300" src="http://d169hzb81ub7u3.cloudfront.net/restaurant/wp-content/uploads/sites/14/2014/12/pasta-2.png" class="attachment-full size-full" alt="" srcset="http://d169hzb81ub7u3.cloudfront.net/restaurant/wp-content/uploads/sites/14/2014/12/pasta-2.png 300w, wp-content/uploads/sites/14/2014/12/pasta-2-150x150.png 150w" sizes="(max-width: 300px) 100vw, 300px" />            </span>
+				</div>
+				</div><div class="col-md-2-4     text-default small-screen-default"  ><div class="figure element-top-20 element-bottom-80   os-animation" data-os-animation="fadeIn" data-os-animation-delay="1s">
+            <span class="figure-image">
+        <img width="300" height="300" src="http://d169hzb81ub7u3.cloudfront.net/restaurant/wp-content/uploads/sites/14/2014/12/pasta-1.png" class="attachment-full size-full" alt="" srcset="http://d169hzb81ub7u3.cloudfront.net/restaurant/wp-content/uploads/sites/14/2014/12/pasta-1.png 300w, wp-content/uploads/sites/14/2014/12/pasta-1-150x150.png 150w" sizes="(max-width: 300px) 100vw, 300px" />            </span>
+				</div>
+				</div><div class="col-md-2-4     text-default small-screen-default"  ></div></div></div><div class="col-md-7     text-center small-screen-default"  ><div class="figure element-top-0 element-bottom-0   os-animation" data-os-animation="fadeInRight" data-os-animation-delay="0.5s">
+            <span class="figure-image">
+        <img width="800" height="691" src="http://d169hzb81ub7u3.cloudfront.net/restaurant/wp-content/uploads/sites/14/2014/12/pasta-sample.png" class="attachment-full size-full" alt="" srcset="http://d169hzb81ub7u3.cloudfront.net/restaurant/wp-content/uploads/sites/14/2014/12/pasta-sample.png 800w, wp-content/uploads/sites/14/2014/12/pasta-sample-300x259.png 300w" sizes="(max-width: 800px) 100vw, 800px" />            </span>
+		</div>
+		</div>        </div>
+	</div>
+</section>
+	<section class="section  text-normal section-text-no-shadow section-inner-no-shadow section-normal section-opaque" >
+	<div class="background-media" style="background-image: url('/{{doc_root}}/wp-content/themes/angular-bootstrap/includes/img/food-bg-3.jpg'); background-repeat:no-repeat; background-size:cover; background-attachment:fixed; background-position: 50% 0%;" data-start="background-position: 50% 0px" data-0-top-bottom="background-position: 50% -80px">
+	<div class="background-overlay grid-overlay-0 " style="background-color: rgba(0,0,0,0);"></div>
+
+	<div class="container container-vertical-default">
+		<div class="row vertical-default">
+			<div class="col-md-2     text-center small-screen-default"  ></div>
+			<div class="col-md-8     text-center small-screen-default"  style=" padding-top: 90px;padding-bottom: 60px;">
+				<div class="panel panel-default  element-top-100 element-bottom-100 os-animation remove-border" data-os-animation="fadeIn" data-os-animation-delay="0.4s">
+			<div class="panel-body" style="background-color:rgba(0, 0, 0, 0.69);">
+				<h1 class="text-center  element-top-20 element-bottom-0 text-light os-animation normal default" data-os-animation="fadeIn" data-os-animation-delay="0.1s" >
+					Guest Reviews</h1><div class="figure element-top-10 element-bottom-20   os-animation" data-os-animation="fadeIn" data-os-animation-delay="0.2s">
+            <span class="figure-image">
+        <img width="260" height="31" ng-src="/{{doc_root}}/wp-content/themes/angular-bootstrap/includes/img/decor-2-big-white.png" class="attachment-full size-full" alt="" />            </span>
+			</div>
+				<div id="flexslider-277" class=" element-top-20 element-bottom-20 text-center text-light flexslider feature-slider" data-os-animation="none" data-os-animation-delay="0s" data-flex-animation="slide" data-flex-controls-position="outside" data-flex-controlsalign="center" data-flex-directions="hide" data-flex-speed="7000" data-flex-controls="show" data-flex-slideshow="true">
+					<ul class="slides">
+						<li>
+							<blockquote >
+								<p>The ideal spot for any occasion, Lambda Restaurant serves dinner seven nights a week, and serves lunch Monday through Friday, when the room is awash in sunlight.</p>
+								<footer>Athens Square</footer>
+							</blockquote>
+						</li>
+						<li>
+							<blockquote >
+								<p>The menu, organized by category, and complemented with corresponding savory sauces, guides diners to steakhouse bliss. Definitely the best choice!</p>
+								<footer>Steakhouse bliss</footer>
+							</blockquote>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div></div><div class="col-md-2     text-default small-screen-default"  ></div>        </div>
+	</div>
+	</div>
+	</section>
+
+	<footer-directive info-foot="doc_root"></footer-directive>
+
+</div>
+</div>

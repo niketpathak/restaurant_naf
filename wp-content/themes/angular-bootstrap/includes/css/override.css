@@ -233,6 +233,53 @@ img {
     right: 20px;
 }
 
+/*HOMEPAGE*/
+#main_homepage .reduce_font_wt {
+    font-weight: 100;
+}
+#main_homepage .add_line_height p {
+    line-height: 1.6;
+}
+#main_homepage blockquote:before {
+    content: "\201C";
+    display: block;
+    font-family: Georgia;
+    font-size: 84px;
+    line-height: 1;
+    position: absolute;
+    left: 10px;
+    top: -15px;
+}
+#main_homepage blockquote p {
+    font-size: 22px;
+}
+#main_homepage .flexslider .slides {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+#main_homepage blockquote.text-light:before {
+    color: rgba(255, 255, 255, 0.7);
+}
+#main_homepage blockquote {
+    border: 0;
+    position: relative;
+    padding: 0 48px;
+}
+.btn-header {
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 15px 40px;
+    font-weight: 100;
+}
+.col-md-2-4 {
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    float: left;
+    width: 20%;
+}
 /*MISC*/
 .container {
     padding: 0 15px 0px 15px;
@@ -253,6 +300,22 @@ img {
 }
 .remove-br br {
     display: none;
+}
+.remove-border {
+    border: none;
+}
+
+.element-right-10 {
+    margin-right: 10px!important;
+}
+.element-left-10 {
+    margin-left: 10px!important;
+}
+.element-bottom-20 {
+    margin-bottom: 20px!important;
+}
+.element-top-20 {
+    margin-top: 20px!important;
 }
 
 /*SLIDER_OVERRIDE*/
