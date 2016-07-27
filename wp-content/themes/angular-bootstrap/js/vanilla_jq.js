@@ -9,6 +9,10 @@
 			//return false;
 		});
 		$('.menu').addClass('menu_transparent');	//make menu transparent on page load
+		$(".menu-item").each(function(){
+			$(this).removeClass("active");
+			$(this).removeClass("current-menu-item");
+		});
 
 		// **** sticky nav
 		var stickyNavTop = $('#masthead').offset().top;

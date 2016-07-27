@@ -17,6 +17,9 @@
 .color_white {
     color: #FFF !important;
 }
+.negate_active {
+    color: rgba(255, 255, 255, .8);
+}
 /*central header text*/
 .header_text {
     position: absolute;
