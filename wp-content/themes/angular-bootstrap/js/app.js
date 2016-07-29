@@ -1,7 +1,7 @@
 //@global_var
 var doc_root = "restaurant";	// without starting/trailing slash
 //Load App with dependencies
-var app = angular.module('wp', ['ngRoute', 'ngSanitize', 'angular.filter']);
+var app = angular.module('wp', ['ngRoute', 'ngSanitize', 'angular.filter', 'ngAnimate']);
 
 //Config Phase
 app.config(function($routeProvider, $locationProvider) {

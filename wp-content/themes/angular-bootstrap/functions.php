@@ -129,6 +129,9 @@ function _tk_scripts() {
 	wp_enqueue_script('angularjs-route', get_template_directory_uri() .'/node_modules/angular-route/angular-route.min.js');
 	wp_enqueue_script('angularjs-sanitize', get_stylesheet_directory_uri() . '/node_modules/angular-sanitize/angular-sanitize.min.js');
 	wp_enqueue_script('angularjs-filter', get_stylesheet_directory_uri() . '/node_modules/angular-filter/dist/angular-filter.min.js');
+	//Load angular-animate+UIbootstrap
+    wp_enqueue_script('angular-animate', get_stylesheet_directory_uri() . '/node_modules/angular-animate/angular-animate.min.js');
+    wp_enqueue_script('angularUI-bootstrap', get_stylesheet_directory_uri() . '/includes/resources/ui-bootstrap-tpls-2.0.0.min.js');
 	//Load Underscore lib
 	wp_enqueue_script('underscore-lib', get_stylesheet_directory_uri() . '/node_modules/underscore/underscore-min.js');
 	//Load App
