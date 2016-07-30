@@ -197,7 +197,7 @@ require get_template_directory() . '/includes/bootstrap-wp-navwalker.php';
 /************************************************** CUST_NPK *********************************************/
 
 /**
- * Get the value of the "count" field
+ * Get the value of the "Price" field
  *
  * @param array $object Details of current post.
  * @param string $field_name Name of field.
@@ -246,3 +246,10 @@ function ccw_insert_thumbnail_url() {
 }
 add_action( 'rest_api_init', 'ccw_insert_thumbnail_url' );
 
+/**
+ * Custom Admin Footer
+ */
+function remove_footer_admin () {
+    echo '&copy; '.date("Y").' Developed by <a href="http://www.niketpathak.com" target="_blank">Niket Pathak</a>';
+}
+add_filter('admin_footer_text', 'remove_footer_admin');
