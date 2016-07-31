@@ -146,6 +146,7 @@ function _tk_scripts() {
 	wp_enqueue_script('PageController', get_stylesheet_directory_uri() . '/js/controllers/PageController.js');
 	wp_enqueue_script('CategoryController', get_stylesheet_directory_uri() . '/js/controllers/CategoryController.js');
 	wp_enqueue_script('MenuController', get_stylesheet_directory_uri() . '/js/controllers/MenuController.js');
+	wp_enqueue_script('ReservationController', get_stylesheet_directory_uri() . '/js/controllers/ReservationController.js');
 	wp_enqueue_script('TestController', get_stylesheet_directory_uri() . '/js/controllers/TestController.js');
 	wp_enqueue_script('footerDirective', get_stylesheet_directory_uri() . '/js/directives/footerDirective.js');
 	wp_enqueue_script('compileTemplateDirective', get_stylesheet_directory_uri() . '/js/directives/compileTemplateDirective.js');

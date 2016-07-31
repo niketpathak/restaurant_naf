@@ -14,6 +14,10 @@ app.config(function($routeProvider, $locationProvider) {
 		templateUrl: localized.partials + 'menu_content.html',
 		controller: 'menuController'
 	})
+	.when('/reservations', {
+		templateUrl: localized.partials + 'reservations.html',
+		controller: 'ReservationController'
+	})
 	.when('/test', {
 		templateUrl: localized.partials + 'test_page.html',
 		controller: 'testController'

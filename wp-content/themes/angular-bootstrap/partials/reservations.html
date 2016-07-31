@@ -10,7 +10,7 @@
                     <div class="row vertical-default remove-paragraph">
                         <div class="col-md-12 text-center small-screen-default header_text">
                             <h1 class="text-center element-top-190 element-bottom-20 text-light os-animation hyper default fsize_header" data-os-animation="fadeIn" data-os-animation-delay="0.1s" >
-                                {{singlepage.title.rendered}}</h1>
+                                Reservations</h1>
                             <div class="figure element-top-20 element-bottom-100 os-animation" data-os-animation="fadeIn" data-os-animation-delay="0.3s">
                             <span class="figure-image">
                                 <img width="260" height="54" ng-src="/{{doc_root}}/wp-content/themes/angular-bootstrap/includes/img/decor-1-big-white.png" class="attachment-full size-full" alt="" />
@@ -174,7 +174,7 @@
                         </div>
                             <div role="form" class="wpcf7" id="wpcf7-f27-p161-o2" lang="en-US" dir="ltr">
                                 <div class="screen-reader-response"></div>
-                                <form action="/restaurant/reservations/#wpcf7-f27-p161-o2" method="post" class="wpcf7-form" novalidate="novalidate">
+                                <form action="/restaurant/reservations/#wpcf7-f27-p161-o2" name="reserveForm" method="post" class="wpcf7-form">
                                     <div style="display: none;">
                                         <input type="hidden" name="_wpcf7" value="27" />
                                         <input type="hidden" name="_wpcf7_version" value="4.4.1" />
@@ -182,17 +182,25 @@
                                         <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f27-p161-o2" />
                                         <input type="hidden" name="_wpnonce" value="9f9c0535a1" />
                                     </div>
+
+
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group text-left">
                                                 <label>Your email</label>
-                                                <span class="wpcf7-form-control-wrap your-email"><input type="email" name="your-email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email form-control" aria-required="true" aria-invalid="false" placeholder="Your email *" /></span>
+                                                <span class="wpcf7-form-control-wrap your-email">
+                                                    <input type="email" name="email" ng-model="email" required="required" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email form-control" aria-required="true" aria-invalid="false" placeholder="Your email *" />
+                                                    <span ng-show="reserveForm.email.$touched && reserveForm.email.$invalid">Valid Email is required.</span>
+                                                </span>
                                             </div></div>
                                         <div class="col-md-6">
                                             <div class="form-group  text-left">
                                                 <label>When would you like to book?</label>
-                                                <span class="wpcf7-form-control-wrap date-589"><input type="text" name="date-589" value="" size="40" class="wpcf7-form-control wpcf7-date wpcf7-validates-as-required form-control" aria-required="true" /> </span>
-                                            </div></div>
+                                                <span class="wpcf7-form-control-wrap date-589">
+                                                    <input readonly="readonly" required type="text" name="date-589" uib-datepicker-popup="{{format}}" ng-model="dt" is-open="popup1.opened" datepicker-options="dateOptions" ng-click="open1()" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" value="{dt}" size="40" class="wpcf7-form-control wpcf7-date wpcf7-validates-as-required form-control" aria-required="true" />
+                                                </span>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-6">
@@ -201,14 +209,7 @@
                                                 <span class="wpcf7-form-control-wrap menu-133">
                                                 <div class="select-wrap">
                                                     <select name="menu-133" class="wpcf7-form-control wpcf7-select" aria-invalid="false">
-                                                        <option value="18:00">18:00</option>
-                                                        <option value="18:30">18:30</option>
-                                                        <option value="19:00">19:00</option>
-                                                        <option value="19:30">19:30</option>
-                                                        <option value="20:00">20:00</option>
-                                                        <option value="20:30">20:30</option>
-                                                        <option value="21:00">21:00</option>
-                                                        <option value="21:30">21:30</option>
+                                                        <option ng-repeat="x in open_times">{{x}}</option>
                                                     </select>
                                                 </div>
                                             </span>
@@ -218,19 +219,8 @@
                                                 <label>Party Size</label>
                                                 <span class="wpcf7-form-control-wrap menu-164">
                                                 <div class="select-wrap">
-                                                    <select name="menu-164" class="wpcf7-form-control wpcf7-select" aria-invalid="false">
-                                                        <option value="1">1</option>
-                                                        <option value="2">2</option>
-                                                        <option value="3">3</option>
-                                                        <option value="4">4</option>
-                                                        <option value="5">5</option>
-                                                        <option value="6">6</option>
-                                                        <option value="7">7</option>
-                                                        <option value="8">8</option>
-                                                        <option value="9">9</option>
-                                                        <option value="10">10</option>
-                                                        <option value="11">11</option>
-                                                        <option value="12">12</option>
+                                                    <select name="menu-164" class="wpcf7-form-control wpcf7-select" aria-invalid="false" >
+                                                        <option ng-repeat='val in range' value=" {{ $index }}">{{ val }}</option>
                                                     </select>
                                                 </div>
                                             </span>
