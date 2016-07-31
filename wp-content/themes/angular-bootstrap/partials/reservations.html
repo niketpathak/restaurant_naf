@@ -121,6 +121,9 @@
                                     <label></label>
                                     <input type="submit" ng-disabled="reserveForm.name.$invalid || reserveForm.email.$invalid || reservation_forceDisable" value="Book my table" class="wpcf7-form-control wpcf7-submit btn btn-primary btn-lg" />
                                 </div>
+                                <div>
+                                    <img ng-hide="ajax_loader_hide" ng-src="/{{doc_root}}/wp-content/themes/angular-bootstrap/includes/img/ajax_loader_1.gif" />
+                                </div>
                                 <div class="col-md-offset-3 col-md-6 alert alert-success" ng-hide="rest_stat_hide">{{ rest_stat }}</div>
                             </form>
 

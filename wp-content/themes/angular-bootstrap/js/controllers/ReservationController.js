@@ -8,6 +8,7 @@ app.controller('ReservationController',
 			$scope.rest_stat = "";
 			$scope.rest_stat_hide = true;
 			$scope.reservation_forceDisable = false;
+			$scope.ajax_loader_hide = true;
 
 			$scope.today = function() {
 				$scope.dt = new Date();
@@ -60,6 +61,8 @@ app.controller('ReservationController',
 		
 			//handle form submit
 			$scope.submitReservationRequest = function () {
+				$scope.reservation_forceDisable = true;
+				$scope.ajax_loader_hide = false;
 				var data_in = {
 					"name": $scope.name,
 					"email": $scope.email,
@@ -69,9 +72,10 @@ app.controller('ReservationController',
 				};
 				$http.post(doc_root+'/make_reservation.php', data_in).then(function(e){
 					// console.log('success fired',e);
+					$scope.ajax_loader_hide = true;
 					$scope.rest_stat_hide = false;
-					if(e.data.res==1) {
-						$scope.reservation_forceDisable = true;
+					if(e.data.res==0) {
+						$scope.reservation_forceDisable = false;
 					}
 					$scope.rest_stat = e.data.msg;
 					$timeout(function () {
