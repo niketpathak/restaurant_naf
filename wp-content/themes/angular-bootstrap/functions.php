@@ -254,3 +254,35 @@ function remove_footer_admin () {
     echo '&copy; '.date("Y").' Developed by <a href="http://www.niketpathak.com" target="_blank">Niket Pathak</a>';
 }
 add_filter('admin_footer_text', 'remove_footer_admin');
+
+add_action( 'admin_bar_menu', 'toolbar_link_to_mypage', 999 );
+
+/**
+ * Contact/help from the developer
+ * @param $wp_admin_bar
+ */
+function toolbar_link_to_mypage( $wp_admin_bar ) {
+    $args = array(
+        'id'    => 'npk',
+        'title' => 'Developer Contact',
+        'href'  => 'http://www.niketpathak.com',
+        'meta'  => array( 'class' => 'my-toolbar-page' )
+    );
+    $wp_admin_bar->add_node( $args );
+}
+
+/**
+ * Register a custom Reservation Page.
+ */
+function wpdocs_register_my_registration_menu_page() {
+    add_menu_page(
+        __( 'Custom Menu Title', 'textdomain' ),
+        'Reservations',
+        'manage_options',
+        'reservation.php',
+        '',
+        get_template_directory_uri().'/includes/img/calendar.png',
+        6
+    );
+}
+add_action( 'admin_menu', 'wpdocs_register_my_registration_menu_page' );
