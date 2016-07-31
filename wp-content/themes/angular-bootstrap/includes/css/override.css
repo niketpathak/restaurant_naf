@@ -229,7 +229,7 @@ img {
     position: absolute;
     right: 0;
     width: 30px;
-    top: 39px;
+    top: 29px;
     line-height: 36px;
     text-align: center;
     z-index: 0;
@@ -329,4 +329,19 @@ img {
     color: white;
     text-shadow: 1px -2px black;
     font-size: 24px;
+}
+
+/*Validation error override*/
+.validation_err {
+    padding: 4px;
+    border-radius: 4px;
+    position: relative;
+    top: 10px;
+}
+/*Disabled button pointer fix*/
+input[disabled] {
+    pointer-events: all !important;
+}
+button[disabled] {
+    pointer-events: all !important;
 }
