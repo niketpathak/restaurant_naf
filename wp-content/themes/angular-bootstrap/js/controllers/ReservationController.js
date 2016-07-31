@@ -1,8 +1,14 @@
 //Reservation Controller
 app.controller('ReservationController',
-	['$scope', '$http', '$routeParams', '$sce','CacheMenuService', 'CacheCategoryService', function($scope, $http, $routeParams, $sce, CacheMenuService, CacheCategoryService) {
+	['$scope', '$http', '$routeParams', '$sce','CacheMenuService', 'CacheCategoryService', '$timeout', function($scope, $http, $routeParams, $sce, CacheMenuService, CacheCategoryService, $timeout) {
 			$scope.doc_root = doc_root;
 			$scope.today_date = new Date();
+			$scope.book_time = "19:30";
+			$scope.partysize = "2"
+			$scope.rest_stat = "";
+			$scope.rest_stat_hide = true;
+			$scope.reservation_forceDisable = false;
+
 			$scope.today = function() {
 				$scope.dt = new Date();
 			};
@@ -51,6 +57,31 @@ app.controller('ReservationController',
 			];
 			//generate range for party size
 			$scope.range = _.range(1, 11);
+		
+			//handle form submit
+			$scope.submitReservationRequest = function () {
+				var data_in = {
+					"name": $scope.name,
+					"email": $scope.email,
+					"booking_date": $scope.dt,
+					"partysize": $scope.partysize,
+					"booking_time": $scope.book_time
+				};
+				$http.post(doc_root+'/make_reservation.php', data_in).then(function(e){
+					// console.log('success fired',e);
+					$scope.rest_stat_hide = false;
+					if(e.data.res==1) {
+						$scope.reservation_forceDisable = true;
+					}
+					$scope.rest_stat = e.data.msg;
+					$timeout(function () {
+						$scope.rest_stat = "";
+						$scope.rest_stat_hide = true;
+					}, 4000);
+				}, function(e){
+					//@to-do: handle failure of ajax req
+				});
+			}
 
 		}
 	]

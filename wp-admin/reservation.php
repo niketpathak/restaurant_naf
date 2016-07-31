@@ -25,12 +25,13 @@ $results = $wpdb->get_results( 'SELECT * FROM wp_reservations', OBJECT );
             <table class="wp-list-table widefat fixed striped pages">
                 <thead>
                     <tr>
-                        <th class="manage-column">#</th>
-                        <th class="manage-column">Name</th>
-                        <th class="manage-column">Email</th>
-                        <th class="manage-column">Date</th>
-                        <th class="manage-column">Time</th>
-                        <th class="manage-column">Party Size</th>
+                        <th class="manage-column" width="5%">#</th>
+                        <th class="manage-column" width="20%">Name</th>
+                        <th class="manage-column" width="23%">Email</th>
+                        <th class="manage-column" width="10%">Date</th>
+                        <th class="manage-column" width="10%">Time</th>
+                        <th class="manage-column" width="8%">Party Size</th>
+                        <th class="manage-column" width="12%">Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -44,6 +45,7 @@ $results = $wpdb->get_results( 'SELECT * FROM wp_reservations', OBJECT );
                                 <td>".$row->date."</td>
                                 <td>".$row->time."</td>
                                 <td>".$row->party_size."</td>
+                                <td>delete</td>
                             </tr>";
                     }
                 ?>
