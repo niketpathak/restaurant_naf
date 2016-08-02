@@ -6,8 +6,21 @@
 		$(".menu-item a").click(function(){
 			$(".menu-item").removeClass("active");
 			$(this).parent().addClass("active");
+			$("html, body").animate({ scrollTop: 0 }, "slow");
 			//return false;
 		});
+		$("html").on("click",".main_menu_al",function (e) {
+			$("html, body").animate({ scrollTop: 0 }, "slow");
+			$(".menu-item").removeClass("active");
+		});
+
+		//scroll-to-top btn
+		$("html").on("click",".go-top",function (e) {
+			e.preventDefault();
+			$("html, body").animate({ scrollTop: 0 }, "slow");
+		});
+
+
 		$('.menu').addClass('menu_transparent');	//make menu transparent on page load
 		$(".menu-item").each(function(){
 			$(this).removeClass("active");
@@ -28,10 +41,17 @@
 				} else {
 					$('.menu').removeClass('menu_transparent');
 				}
+				//manage scroll-to-top button
+				if(scrollTop > 200) {
+					$(".go-top").fadeIn();
+				} else {
+					$(".go-top").fadeOut();
+				}
 			} else {
 				$('#masthead').removeClass('sticky');
 				$('.outermost').css('margin-top',"0px");
 				$('.menu').addClass('menu_transparent');	//keep transparency at top
+				$(".go-top").fadeOut();
 			}
 		});
 

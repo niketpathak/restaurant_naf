@@ -48,6 +48,23 @@
 #footer {
     padding: 20px 0px 35px;
 }
+/*scroll to top button*/
+.go-top {
+    position: fixed!important;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    display: block;
+    font-size: 16px;
+    width: 2em;
+    height: 2em;
+    text-align: center;
+    bottom: -44px;
+    opacity: 0;
+    right: 12px;
+    transition: all .5s;
+    z-index: 100;
+    padding-top: 4px;
+}
 /*MENU Page*/
 .pricing-item-list li.pricing-cirle img {
     border-radius: 50%;
