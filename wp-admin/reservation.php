@@ -25,6 +25,12 @@ if(!empty($_REQUEST["page"])) {
 if(!empty($_REQUEST["show_all"]) && $_REQUEST["show_all"]=="yes") {
     $show_all = true;
 }
+//check for delete requests
+if(!empty($_REQUEST["type"]) && $_REQUEST["type"]=="del" && !empty((int) $_REQUEST["id"])) {
+    $id = (int) $_REQUEST["id"];
+    $wpdb->delete( 'wp_reservations', array( 'id' => $id ) );
+}
+
 //build sql-query
 $sql = "SELECT * FROM wp_reservations";
 if ($show_all == false)
