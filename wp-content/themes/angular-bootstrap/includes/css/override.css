@@ -48,6 +48,21 @@
 #footer {
     padding: 20px 0px 35px;
 }
+/*footer 2*/
+.site-info {
+    background-color: black;
+    color: grey;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+}
+.site-info a:hover{
+    text-decoration: none;
+    color: #c90;
+}
+.site-info a {
+    color: grey;
+}
 /*scroll to top button*/
 .go-top {
     position: fixed!important;

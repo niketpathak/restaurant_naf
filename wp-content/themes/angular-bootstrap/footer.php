@@ -14,18 +14,11 @@
 
 <footer id="colophon" class="site-footer" role="contentinfo">
 <?php // substitute the class "container-fluid" below if you want a wider content area ?>
-	<div class="container">
-		<div class="row">
-			<div class="site-footer-inner col-sm-12">
-
-				<div class="site-info">
-			
-				</div>
-				<!-- close .site-info -->
-
-			</div>
+	<div class="site-footer-inner">
+		<div class="site-info">
+			Copyright &copy <?php echo DATE("Y");?>. All rights reserved. Developed by <a class="npk" href="http://www.niketpathak.com" target="_blank">Niket Pathak</a>
 		</div>
-	</div><!-- close .container -->
+	</div>
 </footer><!-- close #colophon -->
 
 <?php wp_footer(); ?>
