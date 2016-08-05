@@ -71,15 +71,15 @@
 								)
 							); ?>
 						</ul></div>
-<!--					<div class="menu-sidebar">-->
-<!--						<div id="oxywidgetsocial-5" class="sidebar-widget  widget_social">-->
-<!--							<ul class="unstyled inline social-icons social-simple social-normal">-->
-<!--								<li><a   href="../../index.html"><i class="fa fa-twitter"></i></a></li>-->
-<!--								<li><a   href="../../index.html"><i class="fa fa-facebook"></i></a></li>-->
-<!--								<li><a   href="../../index.html"><i class="fa fa-google-plus"></i></a></li>-->
-<!--							</ul>-->
-<!--						</div>-->
-<!--					</div>-->
+					<div class="menu-sidebar">
+						<div id="oxywidgetsocial-5" class="sidebar-widget  widget_social">
+							<ul class="unstyled inline social-icons social-simple social-normal">
+								<li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
+								<li><a href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
+								<li><a href="#" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+							</ul>
+						</div>
+					</div>
 				</nav>
 			</div>
 		</div>
