@@ -253,6 +253,9 @@ ul.social-icons li a {
 #contact_page .form-icon-group > span > input,textarea {
     text-indent: 20px;
 }
+#contact_page form br {
+    display: none;
+}
 
 /*RESERVATIONS PAGE*/
 #reservations blockquote:before {
