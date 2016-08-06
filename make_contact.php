@@ -33,7 +33,7 @@ $message = str_ireplace("{%sender_msgg%}", htmlspecialchars($params["msg"]),$mes
 
 
 $mailsubject = "EscaleIndienne:".$params["sub"];
-$rec_email = 'niketpathak89@gmail.com';
+$rec_email = 'khuranarahul85@gmail.com';
 $array_content=array("post_email" => $params["email"], "post_name" => $params["name"], "msg" => $message);
 $res = send_a_mail($array_content, $rec_email, $mailsubject);
 
