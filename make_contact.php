@@ -56,7 +56,7 @@ exit(json_encode($output));
 
 function send_a_mail($var_array, $destinationmail, $mailsubject) {
     $mail = new PHPMailer();
-	$mail->SMTPDebug = true;	    // uncomment to diagnose errors
+//	$mail->SMTPDebug = true;	    // uncomment to diagnose errors
     $mail->IsSMTP();
     $mail->Host 	= "localhost";   //  ssl://smtp.gmail.com
     $mail->From 	= ('' != $var_array["post_email"]) ? $var_array["post_email"] : "admin@escaleindienne.com";

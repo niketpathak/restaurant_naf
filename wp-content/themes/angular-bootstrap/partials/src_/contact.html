@@ -34,7 +34,7 @@
                                 <p>If you&#8217;ve been to one of our restaurants, you&#8217;ve seen &#8211; and tasted &#8211; what keeps our customers coming back for more. Perfect materials and freshly baked food, delicious Lambda cakes,  muffins, and gourmet coffees make us hard to resist! Stop in today and check us out!</p>
                             </div><div role="form" class="wpcf7" id="wpcf7-f266-p39-o1" lang="en-US" dir="ltr">
                                 <div class="screen-reader-response"></div>
-                                <form action="/restaurant/contact/#wpcf7-f266-p39-o1" method="post" class="wpcf7-form" novalidate="novalidate">
+                                <form ng-submit="submitContactRequest()" name="contactForm" method="post">
                                     <div style="display: none;">
                                         <input type="hidden" name="_wpcf7" value="266" />
                                         <input type="hidden" name="_wpcf7_version" value="4.4.1" />
@@ -45,27 +45,46 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group form-icon-group">
-                                                <i class="fa fa-user"></i> <span class="wpcf7-form-control-wrap your-name"><input type="text" name="your-name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control" aria-required="true" aria-invalid="false" placeholder="Your name *" /></span>
+                                                <i class="fa fa-user"></i>
+                                                <span class="wpcf7-form-control-wrap your-name">
+                                                    <input type="text" name="name" ng-model="name" required="required" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control" aria-required="true" aria-invalid="false" placeholder="Your name *" />
+                                                    <span class="alert-danger validation_err" ng-show="contactForm.name.$touched && contactForm.name.$invalid">Name is required*</span>
+                                                </span>
                                             </div></div>
                                         <div class="col-md-6">
                                             <div class="form-group form-icon-group">
-                                                <i class="fa fa-envelope" > </i> <span class="wpcf7-form-control-wrap your-email"><input type="text" name="your-email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control" aria-required="true" aria-invalid="false" placeholder="Your email *" /></span>
+                                                <i class="fa fa-envelope" > </i>
+                                                <span class="wpcf7-form-control-wrap your-email">
+                                                    <input type="email" name="email" ng-model="email" required="required" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control" aria-required="true" aria-invalid="false" placeholder="Your email *" />
+                                                    <span class="alert-danger validation_err" ng-show="contactForm.email.$touched && contactForm.email.$invalid">Valid Email is required*</span>
+                                                </span>
                                             </div></div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group form-icon-group">
-                                                <i class="fa fa-file-text"></i> <span class="wpcf7-form-control-wrap your-subject"><input type="text" name="your-subject" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control" aria-required="true" aria-invalid="false" placeholder="Your subject *" /></span>
+                                                <i class="fa fa-file-text"></i>
+                                                <span class="wpcf7-form-control-wrap your-subject">
+                                                    <input type="text" name="subject" ng-model="subject" required="required" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control" aria-required="true" aria-invalid="false" placeholder="Your subject *" />
+                                                    <span class="alert-danger validation_err" ng-show="contactForm.subject.$touched && contactForm.subject.$invalid">Subject is required*</span>
+                                                </span>
                                             </div></div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group form-icon-group">
-                                                <i class="fa fa-pencil"></i> <span class="wpcf7-form-control-wrap your-message"><textarea name="your-message" cols="40" rows="8" class="wpcf7-form-control wpcf7-textarea form-control" aria-invalid="false" placeholder="Your message"></textarea></span>
+                                                <i class="fa fa-pencil"></i> <span class="wpcf7-form-control-wrap your-message"><textarea name="msg" ng-model="msg" cols="40" rows="8" class="wpcf7-form-control wpcf7-textarea form-control" aria-invalid="false" placeholder="Your message"></textarea></span>
                                             </div>
                                         </div>
                                     </div>
-                                    <p><input type="submit" value="Send email" class="wpcf7-form-control wpcf7-submit btn btn-primary" /></p>
+                                    <p>
+                                        <input type="submit" ng-disabled="contactForm.name.$invalid || contactForm.email.$invalid || contactForm.subject.$invalid || contact_forceDisable" value="Send email" class="wpcf7-form-control wpcf7-submit btn btn-primary" />
+                                    </p>
+                                    <div>
+                                        <img ng-hide="ajax_loader_hide" ng-src="/{{doc_root}}/wp-content/themes/angular-bootstrap/includes/img/ajax_loader_1.gif" />
+                                    </div>
+                                    <div class="col-md-offset-3 col-md-6 alert alert-success" ng-hide="rest_stat_hide">{{ rest_stat }}</div>
+
                                     <div class="wpcf7-response-output wpcf7-display-none"></div></form></div><div class="divider-wrapper " style="visibility:hidden;background-color:#FFFFF">
                                 <div class="visible-xs" style="height:80px;"></div>
                                 <div class="visible-sm" style="height:80px;"></div>
